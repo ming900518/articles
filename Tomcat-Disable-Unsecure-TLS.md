@@ -9,10 +9,10 @@
 
 3. 翻到Connect段落，並在SSL的設定（通常是`port="443"`或`port="8443"`）最後面加上`sslEnabledProtocols="TLSv1.2"`
 
-*BEFORE:*
-![1615350426488](https://user-images.githubusercontent.com/15919723/110576673-1c9f1100-819c-11eb-84ef-a92456daaafc.jpg)
+  > *BEFORE:*
+  > ![1615350426488](https://user-images.githubusercontent.com/15919723/110576673-1c9f1100-819c-11eb-84ef-a92456daaafc.jpg)
 
-*AFTER:*
-![1615350447795](https://user-images.githubusercontent.com/15919723/110576705-27f23c80-819c-11eb-8061-d12cfcd79f47.jpg)
+  > *AFTER:*
+  > ![1615350447795](https://user-images.githubusercontent.com/15919723/110576705-27f23c80-819c-11eb-8061-d12cfcd79f47.jpg)
 
 4. 存檔並重啓Server應該就搞定了
