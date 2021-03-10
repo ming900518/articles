@@ -7,7 +7,7 @@
 
 2. 輸入指令開啓Tomcat設定檔（nano可以替換成自己喜歡的編輯器）：`nano conf/server.xml`
 
-3. 翻到Connect段落，並在SSL的設定（通常是`port="443"`或`port="8443"`）最後面加上`sslEnabledProtocols="TLSv1.2"`
+3. 翻到`Connector`段落，並在SSL的設定（通常是`port="443"`或`port="8443"`）最後面加上`sslEnabledProtocols="TLSv1.2"`
 
   > *BEFORE:*
   > ![1615350426488](https://user-images.githubusercontent.com/15919723/110576673-1c9f1100-819c-11eb-84ef-a92456daaafc.jpg)
