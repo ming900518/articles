@@ -27,4 +27,6 @@
 設定下面這行即可
 `macs umac-64@openssh.com,hmac-sha2-256,hmac-sha2-512`
 
-上面那些設定完後，存檔離開，先用`sshd -T`確認，再用`systemctl restart sshd`重新啓動SSH Daemon就可以了。
+上面那些設定完後，存檔離開
+
+先用`sshd -T`確認，再用`systemctl restart sshd`重新啓動SSH Daemon就可以了。
