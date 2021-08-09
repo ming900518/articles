@@ -1,7 +1,7 @@
 # 安全的SSH連線
 其實我認為有設IP白名單就差不多了啦，但是我們親愛的臺南市政府智慧發展中心似乎非常重視這塊，那就順便記錄下修改SSH設定檔的方法囉
 
-先用自己習慣的文字編輯器打開ssh daemon的設定檔：`sudo nano /etc/ssh/sshd_config`
+先用自己習慣的文字編輯器打開SSH Daemon的設定檔：`sudo nano /etc/ssh/sshd_config`
 
 ### KexAlgorithms
 加密演算法diffie-hellman-group1-sha1由於長度只有1024位元，被認為是弱加密，所以我們必須把這個演算法禁用掉
@@ -27,4 +27,4 @@
 設定下面這行即可
 `macs umac-64@openssh.com,hmac-sha2-256,hmac-sha2-512`
 
-上面那些設定完後，存檔離開，先用`sshd -T`確認，再用`systemctl restart sshd`重新啓動SSH Service就可以了。
+上面那些設定完後，存檔離開，先用`sshd -T`確認，再用`systemctl restart sshd`重新啓動SSH Daemon就可以了。
