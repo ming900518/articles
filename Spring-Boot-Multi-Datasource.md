@@ -14,7 +14,7 @@
 - [Microsoft JDBC Driver For SQL Server](https://mvnrepository.com/artifact/com.microsoft.sqlserver/mssql-jdbc)（記得選擇符合自己JDK版本的那版，巨硬很愛Java 16不知道為啥）
 - [IBM Data Server Driver For JDBC and SQLJ](https://mvnrepository.com/artifact/com.ibm.db2/jcc)
 
-### application.properties設定
+### application.properties設定（也可以用yaml方式寫）
 先把舊的DB設定刪掉，把下面這些貼進去
 ```
 spring.datasource.dynamic.primary=（主DB）
