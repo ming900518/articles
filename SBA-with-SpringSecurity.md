@@ -70,7 +70,7 @@ Spring Boot Admin的網頁都是用GET請求的，所以只需要把所有相關
 
 Spring Boot Actuator是Spring Boot的監控工具，用來提供Spring Boot Admin資料，把他設定為只有本機可以存取會比較安全
 
-這邊的設定應該還有優化的空間，如果有更好的寫法我在補充上來
+這邊的設定應該還有優化的空間，如果有更好的寫法我再補充上來
 
 接下來就可以開始設定Spring Boot Admin了
 
