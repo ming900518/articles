@@ -36,7 +36,18 @@
     3. 合計格子右下角黑點滑鼠移過去變黑色加號後按住拉動可以增加其他合計  
       <img width="1440" alt="Screen Shot 2021-10-02 at 2 43 11 PM" src="https://user-images.githubusercontent.com/15919723/135706531-bda2acbd-2981-45e9-99c8-aeef1ede5c1f.png">
       
-    4. 在表格中新增欄位並使用函數，會自動套用到整行
+    4. 在最後一列的儲存格按Tab可以新增新列
+
+    5. 在最後一欄的儲存格拉儲存格右下角的黑點可以新增新欄
+      
+    6. 在表格中的欄位使用函數，會自動套用到整行
       <img width="1440" alt="Screen Shot 2021-10-02 at 2 56 25 PM" src="https://user-images.githubusercontent.com/15919723/135706889-89cd6336-d30d-4914-b7dd-fdb4c04b1307.png">
       
-
+    7. 「常用」-「設定格式化」功能可以在選取的表格中新增不同的效果，並可透過「醒目提示儲存格規則」和「頂端/底端項目規則」進行調整
+      1. 資料橫條（進度條）
+        <img width="1440" alt="Screen Shot 2021-10-02 at 3 18 50 PM" src="https://user-images.githubusercontent.com/15919723/135707478-1cdb111e-ae06-462b-a2d3-453e3aac12ef.png">
+      2. 色階
+        <img width="1440" alt="Screen Shot 2021-10-02 at 3 19 07 PM" src="https://user-images.githubusercontent.com/15919723/135707488-28307b59-ddb1-4a0d-a8c2-4e19e1796e7d.png"> 
+      3. 圖示集
+        <img width="1440" alt="Screen Shot 2021-10-02 at 3 20 38 PM" src="https://user-images.githubusercontent.com/15919723/135707529-fce5097a-c72a-43bf-94e7-89899e22b5da.png">
+        
