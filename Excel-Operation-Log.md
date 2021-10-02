@@ -43,11 +43,10 @@
     6. 在表格中的欄位使用函數，會自動套用到整行
       <img width="1440" alt="Screen Shot 2021-10-02 at 2 56 25 PM" src="https://user-images.githubusercontent.com/15919723/135706889-89cd6336-d30d-4914-b7dd-fdb4c04b1307.png">
       
-    7. 「常用」-「設定格式化」功能可以在選取的表格中新增不同的效果，並可透過「醒目提示儲存格規則」和「頂端/底端項目規則」進行調整
+    7. 「常用」-「設定格式化」功能可以在選取的表格中新增不同的效果，並可透過「醒目提示儲存格規則」和「頂端/底端項目規則」進行調整  
       1. 資料橫條（進度條）
         <img width="1440" alt="Screen Shot 2021-10-02 at 3 18 50 PM" src="https://user-images.githubusercontent.com/15919723/135707478-1cdb111e-ae06-462b-a2d3-453e3aac12ef.png">
       2. 色階
         <img width="1440" alt="Screen Shot 2021-10-02 at 3 19 07 PM" src="https://user-images.githubusercontent.com/15919723/135707488-28307b59-ddb1-4a0d-a8c2-4e19e1796e7d.png"> 
       3. 圖示集
         <img width="1440" alt="Screen Shot 2021-10-02 at 3 20 38 PM" src="https://user-images.githubusercontent.com/15919723/135707529-fce5097a-c72a-43bf-94e7-89899e22b5da.png">
-        
