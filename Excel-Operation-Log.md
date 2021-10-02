@@ -36,4 +36,7 @@
     3. 合計格子右下角黑點滑鼠移過去變黑色加號後按住拉動可以增加其他合計  
       <img width="1440" alt="Screen Shot 2021-10-02 at 2 43 11 PM" src="https://user-images.githubusercontent.com/15919723/135706531-bda2acbd-2981-45e9-99c8-aeef1ede5c1f.png">
       
-    4. 
+    4. 在表格中新增欄位並使用函數，會自動套用到整行
+      <img width="1440" alt="Screen Shot 2021-10-02 at 2 56 25 PM" src="https://user-images.githubusercontent.com/15919723/135706889-89cd6336-d30d-4914-b7dd-fdb4c04b1307.png">
+      
+
