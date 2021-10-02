@@ -15,3 +15,5 @@
    <img width="1440" alt="Screen Shot 2021-10-02 at 1 43 05 PM" src="https://user-images.githubusercontent.com/15919723/135705132-45139e0a-9b2b-4264-83c9-b69942f6e9ea.png">
 - 排序順序自訂清單
   <img width="1440" alt="Screen Shot 2021-10-02 at 1 46 53 PM" src="https://user-images.githubusercontent.com/15919723/135705211-46137f45-e70b-4d83-a4dc-5e20ae6fc7ba.png">
+- 多重小計：先做一次「資料」-「小計」，之後再做一次小計時取消選擇「取代目前小計」即可
+  <img width="1440" alt="Screen Shot 2021-10-02 at 2 20 05 PM" src="https://user-images.githubusercontent.com/15919723/135706004-907e9af5-b806-4103-9cba-09b1de570b51.png">
