@@ -111,6 +111,10 @@
   <img width="1440" alt="Screen Shot 2021-10-09 at 2 49 57 PM" src="https://user-images.githubusercontent.com/15919723/136647893-fc7fc3a9-48c6-4b40-b455-3c7317bcfcdb.png">
   <img width="1440" alt="Screen Shot 2021-10-09 at 2 50 08 PM" src="https://user-images.githubusercontent.com/15919723/136647901-56b40116-a74e-47cb-8b09-5fcd0e004216.png">
   <img width="1440" alt="Screen Shot 2021-10-09 at 2 50 14 PM" src="https://user-images.githubusercontent.com/15919723/136647907-657c41b2-e11f-4d7e-a6f2-2349cb50d735.png">
+  （如果想轉成直的，可以做完之後複製再轉置貼上）
   3. 連續分隔符號視為單一處理  
   <img width="1440" alt="Screen Shot 2021-10-09 at 2 54 13 PM" src="https://user-images.githubusercontent.com/15919723/136647915-83bc8699-0cc7-4b80-b95d-eb3c4b4207b8.png">
   <img width="1440" alt="Screen Shot 2021-10-09 at 2 57 24 PM" src="https://user-images.githubusercontent.com/15919723/136647919-ef85b485-ea1d-4465-833d-2cea1153c15c.png">
+  4. 擠在同一個儲存格的多行資料
+  換行符號：Ctrl + J或者用CHAR(10)做替代`=SUBSTITUTE(目標格, CHAR(10))`
+  (1)(2)
