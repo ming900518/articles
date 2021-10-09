@@ -5,6 +5,7 @@
 ## 快速導引
 - [2021/09/25](#2021/09/25)
 - [2021/10/02](#2021/10/02)
+- [2021/10/09](#2021/10/09)
 
 ## 內文
 
@@ -15,7 +16,7 @@
 - [貼上原值](https://user-images.githubusercontent.com/15919723/134762787-76d321ba-1544-406b-9b0c-8a8c94159524.mov)
 - [建立樞紐分析表 + 調整欄位](https://user-images.githubusercontent.com/15919723/134763542-3e66931c-6904-4ce6-a510-64380b3b8e46.mov)
 
-### 2021/10/02（用Windows虛擬機 + Office 2007應該比較好對功能）
+### 2021/10/02
 
 - 自訂排序
    <img width="1440" alt="Screen Shot 2021-10-02 at 1 43 05 PM" src="https://user-images.githubusercontent.com/15919723/135705132-45139e0a-9b2b-4264-83c9-b69942f6e9ea.png">
@@ -50,3 +51,26 @@
         <img width="1440" alt="Screen Shot 2021-10-02 at 3 19 07 PM" src="https://user-images.githubusercontent.com/15919723/135707488-28307b59-ddb1-4a0d-a8c2-4e19e1796e7d.png"> 
       3. 圖示集
         <img width="1440" alt="Screen Shot 2021-10-02 at 3 20 38 PM" src="https://user-images.githubusercontent.com/15919723/135707529-fce5097a-c72a-43bf-94e7-89899e22b5da.png">
+
+### 2021/10/09
+
+- 篩選
+  (1)
+  1. 數字篩選(3)(2)
+  2. 依色彩篩選(4)
+  3. 前幾位篩選(5)(6)
+  4. 介於篩選(7)(8)
+
+  Q: 金額小於600大於10000要怎麼按
+  A: (9)
+
+  ``
+  SELECT * FROM table WHERE 金額 > 10000 AND 金額 < 600; # 且
+  SELECT * FROM table WHERE 金額 > 10000 OR 金額 < 600; # 或
+  ``
+
+  5. 日期篩選(10)
+  6. 局部篩選（後1/3）：先選要篩的那排，點那一列的資料，再按篩選(11)
+  7. 進階篩選：先做好一般篩選，按進階(12)
+  8. 交叉篩選：插入->表格->交叉分析篩選器
+
