@@ -58,7 +58,7 @@
   <img width="1440" alt="Screen Shot 2021-10-09 at 1 17 00 PM" src="https://user-images.githubusercontent.com/15919723/136646022-89942212-f077-4d03-83c6-a8d11c22274f.png">
 
   1. 數字篩選  
-  <img width="1440" alt="Screen Shot 2021-10-09 at 1 18 34 PM" src="https://user-images.githubusercontent.com/15919723/136646032-75ccd45d-4dda-48f8-9a46- 1f4d67ac0180.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 18 34 PM" src="https://user-images.githubusercontent.com/15919723/136646154-c95ccf59-6e5c-4a11-ab39-743d4679704a.png">
   <img width="1440" alt="Screen Shot 2021-10-09 at 1 18 20 PM" src="https://user-images.githubusercontent.com/15919723/136646045-db458695-4da1-403b-bbb0-36c8fb8f6de1.png">
   2. 依色彩篩選  
   <img width="1440" alt="Screen Shot 2021-10-09 at 1 19 54 PM" src="https://user-images.githubusercontent.com/15919723/136646056-939c192d-572d-4159-9ee2-ede34109ea0a.png">
