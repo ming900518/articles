@@ -116,5 +116,9 @@
   <img width="1440" alt="Screen Shot 2021-10-09 at 2 54 13 PM" src="https://user-images.githubusercontent.com/15919723/136647915-83bc8699-0cc7-4b80-b95d-eb3c4b4207b8.png">
   <img width="1440" alt="Screen Shot 2021-10-09 at 2 57 24 PM" src="https://user-images.githubusercontent.com/15919723/136647919-ef85b485-ea1d-4465-833d-2cea1153c15c.png">
   4. 擠在同一個儲存格的多行資料
-  換行符號：Ctrl + J或者用CHAR(10)做替代`=SUBSTITUTE(目標格, CHAR(10))`
-  (1)(2)
+  換行符號：Ctrl + J或者用CHAR(10)做替代
+  
+  ``=SUBSTITUTE(目標格, CHAR(10))``
+  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 3 14 32 PM" src="https://user-images.githubusercontent.com/15919723/136648506-82c06150-9e9c-49cc-bddf-ba67bd296a41.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 3 14 45 PM" src="https://user-images.githubusercontent.com/15919723/136648513-5cbce2a9-90dc-4cea-b059-1bec71008b5c.png">
