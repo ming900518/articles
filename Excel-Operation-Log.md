@@ -54,23 +54,34 @@
 
 ### 2021/10/09
 
-- 篩選
-  (1)
-  1. 數字篩選(3)(2)
-  2. 依色彩篩選(4)
-  3. 前幾位篩選(5)(6)
-  4. 介於篩選(7)(8)
+- 篩選  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 17 00 PM" src="https://user-images.githubusercontent.com/15919723/136646022-89942212-f077-4d03-83c6-a8d11c22274f.png">
 
-  Q: 金額小於600大於10000要怎麼按
-  A: (9)
+  1. 數字篩選  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 18 34 PM" src="https://user-images.githubusercontent.com/15919723/136646032-75ccd45d-4dda-48f8-9a46- 1f4d67ac0180.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 18 20 PM" src="https://user-images.githubusercontent.com/15919723/136646045-db458695-4da1-403b-bbb0-36c8fb8f6de1.png">
+  2. 依色彩篩選  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 19 54 PM" src="https://user-images.githubusercontent.com/15919723/136646056-939c192d-572d-4159-9ee2-ede34109ea0a.png">
+  3. 前幾位篩選
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 22 25 PM" src="https://user-images.githubusercontent.com/15919723/136646075-cb620865-4459-414c-a045-725de8efcca8.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 22 32 PM" src="https://user-images.githubusercontent.com/15919723/136646079-8b1d5e3c-7d13-4ef2-9456-133e406d373a.png">
+  4. 介於篩選  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 23 10 PM" src="https://user-images.githubusercontent.com/15919723/136646084-2293b0c7-7662-4fb1-91ad-8a3c8420c03b.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 23 14 PM" src="https://user-images.githubusercontent.com/15919723/136646088-25ca4223-8b2e-47b7-b708-8e4e0c437c88.png">
 
-  ``
+  Q: 金額小於600大於10000要怎麼按?  
+  A: <img width="1440" alt="Screen Shot 2021-10-09 at 1 33 46 PM" src="https://user-images.githubusercontent.com/15919723/136646093-d411ceeb-7b60-4a5a-bad5-b71eef21c0b5.png">
+  
+  ```
   SELECT * FROM table WHERE 金額 > 10000 AND 金額 < 600; # 且
   SELECT * FROM table WHERE 金額 > 10000 OR 金額 < 600; # 或
-  ``
+  ```
 
-  5. 日期篩選(10)
-  6. 局部篩選（後1/3）：先選要篩的那排，點那一列的資料，再按篩選(11)
-  7. 進階篩選：先做好一般篩選，按進階(12)
-  8. 交叉篩選：插入->表格->交叉分析篩選器
+  5. 日期篩選  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 34 29 PM" src="https://user-images.githubusercontent.com/15919723/136646109-8af95e4b-7b72-4e26-9f37-b25ee127a1ec.png">
+  6. 局部篩選（後1/3）：先選要篩的那排，點那一列的資料，再按篩選  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 41 31 PM" src="https://user-images.githubusercontent.com/15919723/136646117-9bf5582e-657b-4621-94e5-7eb7b5b91a5a.png">
+  7. 進階篩選：先做好一般篩選，按進階  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 1 48 28 PM" src="https://user-images.githubusercontent.com/15919723/136646127-b95e6fab-72bc-4b69-a0df-eb6639d729fb.png">
+  8. 交叉篩選：插入->表格->交叉分析篩選器  
 
