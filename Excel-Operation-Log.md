@@ -84,19 +84,33 @@
   7. 進階篩選：先做好一般篩選，按進階  
   <img width="1440" alt="Screen Shot 2021-10-09 at 1 48 28 PM" src="https://user-images.githubusercontent.com/15919723/136646127-b95e6fab-72bc-4b69-a0df-eb6639d729fb.png">
   8. 交叉篩選：插入->表格->交叉分析篩選器（Excel 2010有Bug用不了）  
-  (1)(2)
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 12 00 PM" src="https://user-images.githubusercontent.com/15919723/136647788-4d5200d6-d2b9-4970-855d-e2cd4f160a5e.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 12 08 PM" src="https://user-images.githubusercontent.com/15919723/136647797-600e6734-a1a1-427d-bc53-5b75b96756c7.png">
 
 - 資料驗證  
   1. 下拉式選單：拉要做下拉選單的格子->資料->資料驗證  
-  (3)(4)  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 18 19 PM" src="https://user-images.githubusercontent.com/15919723/136647808-402ac059-618c-449d-b5df-3a9a6ac9d064.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 18 58 PM" src="https://user-images.githubusercontent.com/15919723/136647815-400f932c-0418-484f-a093-a7a302086518.png">
   2. 輸入提示與錯誤警告  
-  (5)(6)(7)(8)(9)  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 26 26 PM" src="https://user-images.githubusercontent.com/15919723/136647819-e95c5899-dbdd-4dc6-8433-7c099214d90f.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 26 32 PM" src="https://user-images.githubusercontent.com/15919723/136647823-2bf40472-f5ee-4c03-ac1c-54b4e25f5fa7.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 26 36 PM" src="https://user-images.githubusercontent.com/15919723/136647828-78c3ee1f-7fcd-401b-97f4-3fbb8007bf6e.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 26 43 PM" src="https://user-images.githubusercontent.com/15919723/136647832-088c250b-2296-4aa1-bcf0-a08df9dac6f5.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 26 50 PM" src="https://user-images.githubusercontent.com/15919723/136647835-588d55b4-3541-40fb-ae8e-0e06e1af09d3.png">
   3. 日期（操作跟上面一樣，但條件不同）  
-  (10)  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 30 32 PM" src="https://user-images.githubusercontent.com/15919723/136647847-b89250ec-b888-4980-b349-b4e484c8426f.png">
+
 - 資料剖析：先插入幾個欄位才不會被蓋掉->資料->資料剖析，寬度不固定的時候，可以先用尋找取代的功能插入符號，再用分隔符號的方式操作  
   1. 固定寬度  
-  (11)(12)(13)(14)  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 41 59 PM" src="https://user-images.githubusercontent.com/15919723/136647851-4cc4ceaf-fd4a-4ad4-b497-90d704a37a56.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 42 05 PM" src="https://user-images.githubusercontent.com/15919723/136647857-6e68bf98-e316-4979-a663-1a59a383d426.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 45 51 PM" src="https://user-images.githubusercontent.com/15919723/136647862-7d39f1e6-3c92-4724-88fb-8618fb99ed63.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 46 56 PM" src="https://user-images.githubusercontent.com/15919723/136647866-4eb8aeec-d1f7-4d42-8c0c-a4ff452f1214.png">
   2. 分隔符號（如果自訂符號，記得先把符號複製起來再操作）  
-  (15)(16)(17)(18)  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 49 29 PM" src="https://user-images.githubusercontent.com/15919723/136647882-9506c125-24db-464b-a428-0ab9e0ee9b0a.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 49 57 PM" src="https://user-images.githubusercontent.com/15919723/136647893-fc7fc3a9-48c6-4b40-b455-3c7317bcfcdb.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 50 08 PM" src="https://user-images.githubusercontent.com/15919723/136647901-56b40116-a74e-47cb-8b09-5fcd0e004216.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 50 14 PM" src="https://user-images.githubusercontent.com/15919723/136647907-657c41b2-e11f-4d7e-a6f2-2349cb50d735.png">
   3. 連續分隔符號視為單一處理  
-  (19)(20)  
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 54 13 PM" src="https://user-images.githubusercontent.com/15919723/136647915-83bc8699-0cc7-4b80-b95d-eb3c4b4207b8.png">
+  <img width="1440" alt="Screen Shot 2021-10-09 at 2 57 24 PM" src="https://user-images.githubusercontent.com/15919723/136647919-ef85b485-ea1d-4465-833d-2cea1153c15c.png">
