@@ -192,16 +192,17 @@
     <img width="1440" alt="Screen Shot 2021-10-16 at 2 52 53 PM" src="https://user-images.githubusercontent.com/15919723/137577342-aad76254-2da2-4935-b30e-24ab116ca455.png">
 
     12. LOOKUP（查找）：如果要下拉，要用絕對位置去填lookup vector跟result vector（可以用F4去做不用自己加$），還有lookup vector要填區間最小值
-    (1)
-    (2)
-    (3)
-    (4)
-    (5)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 32 54 PM" src="https://user-images.githubusercontent.com/15919723/137579515-9930520c-c8be-4ea3-b50f-f41aa6c420f1.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 33 00 PM" src="https://user-images.githubusercontent.com/15919723/137579518-ea8bb017-f8d5-4ad3-ac80-06e48fef3115.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 33 30 PM" src="https://user-images.githubusercontent.com/15919723/137579527-86bed929-9d7c-4c48-8588-fef8a5f22f17.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 33 35 PM" src="https://user-images.githubusercontent.com/15919723/137579530-8684a9f9-da6f-47cc-947c-0cb6786d44a7.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 37 01 PM" src="https://user-images.githubusercontent.com/15919723/137579535-ee9d58f5-dfb3-4a2b-ad12-e7376b723ed9.png">
 
     13. VLOOKUP（自動查找）：查閱值必須對應到查詢範圍最左邊的第一個欄位，然後第四個引數的值只接受0跟1（是否要完全符合）
-    (6)
-    (7)
-    (8)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 46 01 PM" src="https://user-images.githubusercontent.com/15919723/137579580-f4ff81f7-d9b7-46d7-a5fb-2774134ed569.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 48 02 PM" src="https://user-images.githubusercontent.com/15919723/137579583-681cb18d-678f-46ff-b22f-3a9fe4f894d8.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 48 06 PM" src="https://user-images.githubusercontent.com/15919723/137579589-45b2c195-8f89-4a96-b154-73272866d910.png">
 
-    14. 要在公式中使用巢狀函數，用括號去做，跟SQL的子查詢一樣
-    (9)
+    14. 在函數中使用巢狀函數
+    <img width="1440" alt="Screen Shot 2021-10-16 at 3 57 37 PM" src="https://user-images.githubusercontent.com/15919723/137579611-8dd45be7-344a-4fcb-93d8-70df33eef067.png">
+
