@@ -191,4 +191,17 @@
     11. DAYS（計算多少天）：2013之後才有
     <img width="1440" alt="Screen Shot 2021-10-16 at 2 52 53 PM" src="https://user-images.githubusercontent.com/15919723/137577342-aad76254-2da2-4935-b30e-24ab116ca455.png">
 
+    12. LOOKUP（查找）：如果要下拉，要用絕對位置去填lookup vector跟result vector（可以用F4去做不用自己加$），還有lookup vector要填區間最小值
+    (1)
+    (2)
+    (3)
+    (4)
+    (5)
 
+    13. VLOOKUP（自動查找）：查閱值必須對應到查詢範圍最左邊的第一個欄位，然後第四個引數的值只接受0跟1（是否要完全符合）
+    (6)
+    (7)
+    (8)
+
+    14. 要在公式中使用巢狀函數，用括號去做，跟SQL的子查詢一樣
+    (9)
