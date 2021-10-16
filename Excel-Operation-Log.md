@@ -6,6 +6,7 @@
 - [2021/09/25](#20210925)
 - [2021/10/02](#20211002)
 - [2021/10/09](#20211009)
+- [2021/10/16](#20211016)
 
 ## 內文
 
@@ -122,6 +123,8 @@
   
   <img width="1440" alt="Screen Shot 2021-10-09 at 3 14 32 PM" src="https://user-images.githubusercontent.com/15919723/136648506-82c06150-9e9c-49cc-bddf-ba67bd296a41.png">
   <img width="1440" alt="Screen Shot 2021-10-09 at 3 14 45 PM" src="https://user-images.githubusercontent.com/15919723/136648513-5cbce2a9-90dc-4cea-b059-1bec71008b5c.png">
+
+### 2021/10/16
 
 - 常用函數
   1. 資料來源基礎概念：假設要複製A1到C3
