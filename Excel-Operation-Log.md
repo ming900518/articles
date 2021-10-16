@@ -147,42 +147,45 @@
     <img width="1440" alt="Screen Shot 2021-10-16 at 2 01 38 PM" src="https://user-images.githubusercontent.com/15919723/137576095-1f78fd0d-5e88-48d5-8668-525126878d6a.png">
 
     3. COUNT（計數）：反正就是SQL的COUNT()，算個數
-    (1)
-    (2)
-    (3)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 15 21 PM" src="https://user-images.githubusercontent.com/15919723/137577256-7a6a8f56-1772-409a-9da6-236cd80fae96.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 15 47 PM" src="https://user-images.githubusercontent.com/15919723/137577257-e81cd3d4-428c-402e-a20c-406d11d66f42.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 15 47 PM" src="https://user-images.githubusercontent.com/15919723/137577259-4eb07010-a57e-457d-99aa-b60ae10af152.png">
 
     4. COUNTIF（有條件的計數）：加入條件
-    (4)
-    (5)
-    (6)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 17 24 PM" src="https://user-images.githubusercontent.com/15919723/137577265-9f1952a2-9651-4ecb-8c65-85e7a73dbdd6.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 17 52 PM" src="https://user-images.githubusercontent.com/15919723/137577267-3ff685ab-100d-4b5a-8749-4105e1642f27.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 17 57 PM" src="https://user-images.githubusercontent.com/15919723/137577270-bc375c12-4a05-4655-92b7-bae39c6a5923.png">
 
     5. COUNTA（文字個數計數）：上面COUNT只能計算數字，這個可以跟文字混
-    (7)
-    (8)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 21 29 PM" src="https://user-images.githubusercontent.com/15919723/137577277-6f9a2b84-371d-465c-b79f-980b08b85e71.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 21 31 PM" src="https://user-images.githubusercontent.com/15919723/137577284-9637fa08-ec25-4ca5-96d2-aabbc478b9dc.png">
 
     6. AVERAGE（平均值）、MAX（最大值）、MIX（最小值）
 
     7. ROUND（四捨五入到指定位置）：也可以用「常用」裡面的位數增加減少來做
-    (9)
-    (10)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 28 17 PM" src="https://user-images.githubusercontent.com/15919723/137577294-fb5373bf-a047-4854-941f-e44a361ac0ef.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 28 22 PM" src="https://user-images.githubusercontent.com/15919723/137577301-8d17626e-9ed7-4a08-999c-d02747d768e2.png">
 
     8. ROUNDUP（無條件進位）：跟上面操作一樣
 
     9. IF：讓符合條件的計算產生A結果，否則產生B結果
-    (11)
-    (12)
-    (13)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 33 07 PM" src="https://user-images.githubusercontent.com/15919723/137577307-4efe6931-11c6-4e24-87ac-17cd93459c92.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 34 01 PM" src="https://user-images.githubusercontent.com/15919723/137577308-68e8faf7-4092-447c-bc3f-7db380cf8c9f.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 34 18 PM" src="https://user-images.githubusercontent.com/15919723/137577310-a5c73b90-3a08-4fdd-83dc-451fbb6ea3d3.png">
+
     當然也可以在這裡做計算
-    (14)
-    (15)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 37 04 PM" src="https://user-images.githubusercontent.com/15919723/137577321-f940ecfe-e906-488f-9036-267230b7f493.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 37 14 PM" src="https://user-images.githubusercontent.com/15919723/137577322-874f0c5a-bd11-4f0a-bcda-fd8e8d2ff00b.png">
+
     文字轉數字
-    (16)
-    (17)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 43 55 PM" src="https://user-images.githubusercontent.com/15919723/137577324-fc3718b3-c821-4a98-96c8-b03fc7529f7e.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 44 01 PM" src="https://user-images.githubusercontent.com/15919723/137577328-57c17402-7c15-4c6e-a57c-1dc8cf1a7fb1.png">
 
     10. EDATE（以月計算日期）：如果秀出來是亂碼，記得把格子格式改成日期
-    (18)
-    (19)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 47 09 PM" src="https://user-images.githubusercontent.com/15919723/137577334-fe7aa436-17ef-48ec-85a4-3c77943baa0f.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 47 13 PM" src="https://user-images.githubusercontent.com/15919723/137577336-0301a86b-735b-41cc-b6d9-b099fdc49570.png">
 
     11. DAYS（計算多少天）：2013之後才有
-    (20)
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 52 53 PM" src="https://user-images.githubusercontent.com/15919723/137577342-aad76254-2da2-4935-b30e-24ab116ca455.png">
+
 
