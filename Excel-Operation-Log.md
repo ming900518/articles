@@ -129,11 +129,23 @@
     - 絕對位置：$A$1 -> $A$1
     - 混合位置：A$1 -> C$1（相對欄絕對列）$A1 -> $A3（絕對欄相對列）
 
-  2. 函數可以用儲存格右下角的點點拖曳或雙擊，直接寫整排同樣的(1)
-  3. 如果函數中沒有使用絕對位置，在拖拽的時候會參照錯誤，這時可以改用絕對位置(2)(3)
+  2. 函數可以用儲存格右下角的點點拖曳或雙擊，直接寫整排同樣的
+  <img width="1440" alt="Screen Shot 2021-10-16 at 1 33 00 PM" src="https://user-images.githubusercontent.com/15919723/137576034-85195061-ae26-4204-b798-43ca5d43088d.png">
+
+  3. 如果函數中沒有使用絕對位置，在拖拽的時候會參照錯誤，這時可以改用絕對位置
+  <img width="1440" alt="Screen Shot 2021-10-16 at 1 34 43 PM" src="https://user-images.githubusercontent.com/15919723/137576039-3a90dc79-1de9-4490-80a8-e5c7cd6f468a.png">
+  <img width="1440" alt="Screen Shot 2021-10-16 at 1 36 32 PM" src="https://user-images.githubusercontent.com/15919723/137576041-16a91942-61c3-4fab-a56b-081dda8707b7.png">
+
   4. 一些必知的函數
-    1. SUM（加總函數）：可以直接用自動加總功能(4)，也可以多選範圍做不連續的加總(5)(6)  
-    2. SUMIF（有條件的加總）：資料範圍之外，還需要多填選擇條件(7)(8)  
+    1. SUM（加總函數）：可以直接用自動加總功能，也可以多選範圍做不連續的加總
+    <img width="1440" alt="Screen Shot 2021-10-16 at 1 44 47 PM" src="https://user-images.githubusercontent.com/15919723/137576053-c5cc613d-d41e-4166-be97-107f6a858e23.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 1 46 04 PM" src="https://user-images.githubusercontent.com/15919723/137576059-185dfa23-6eb8-45c3-9c2c-55bd53ec67b2.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 1 47 03 PM" src="https://user-images.githubusercontent.com/15919723/137576083-f1fa81fd-4db7-4979-8403-2fdd6bafb5ba.png">
+    
+    2. SUMIF（有條件的加總）：資料範圍之外，還需要多填選擇條件
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 01 32 PM" src="https://user-images.githubusercontent.com/15919723/137576092-59194573-c8e6-4723-8268-4a7c03af86ba.png">
+    <img width="1440" alt="Screen Shot 2021-10-16 at 2 01 38 PM" src="https://user-images.githubusercontent.com/15919723/137576095-1f78fd0d-5e88-48d5-8668-525126878d6a.png">
+
     3. AVERAGE（平均）：
     4. 用快速鍵做平均：
     5. ROUND（四捨五入到指定位數）：
