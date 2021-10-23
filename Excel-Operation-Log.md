@@ -211,8 +211,11 @@
 
 - 樞紐分析表
   1. 建立樞紐分析表
-  1, 2, 3
+  <img width="1440" alt="Screen Shot 2021-10-23 at 1 45 17 PM" src="https://user-images.githubusercontent.com/15919723/138551194-e814b802-3900-4439-a9be-1565d8580177.png">
+  <img width="1440" alt="Screen Shot 2021-10-23 at 1 45 28 PM" src="https://user-images.githubusercontent.com/15919723/138551201-906c3c7a-82bc-4002-9598-144ae05be331.png">
+  <img width="1440" alt="Screen Shot 2021-10-23 at 1 51 21 PM" src="https://user-images.githubusercontent.com/15919723/138551209-a9e25249-d438-4da3-a727-181c431b876d.png">
+  
   2. 樞紐分析表選項
-  4
+  <img width="1440" alt="Screen Shot 2021-10-23 at 2 40 50 PM" src="https://user-images.githubusercontent.com/15919723/138551220-78feacc8-ba79-4312-bda4-d4440f72db27.png">
 
   剩下都在介紹樞紐分析表的功能，我就不收錄了
