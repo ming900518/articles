@@ -51,10 +51,13 @@ mariadb-server is already the newest version (1:10.3.32-0ubuntu0.20.04.1).
 
 1. 首先，開啓終端機（或者用SSH連進去）
 2. 輸入以下指令把MariaDB Package Repository加入apt sources list中 
+
 ```
 curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 ```
+
 結果應該會長這樣
+
 ```
 $ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 [info] Checking for script prerequisites.
@@ -63,15 +66,21 @@ $ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 [info] Running apt-get update...
 [info] Done adding trusted package signing keys
 ```
+
 3. 輸入以下指令安裝新版的MariaDB（這邊注意，是Install不是Update，包名不一樣喔，新的MariaDB會自動把舊的移除掉）
+
 ```
 sudo apt install mariadb-server -y
+
 ```
 4. 輸入以下指令更新資料庫
+
 ```
 sudo mysql_upgrade -u [資料庫帳號] -p[資料庫密碼，注意參數跟密碼中間不能輸入空白]
+
 ```
 結果應該會長這樣
+
 ```
 $ sudo mysql_upgrade -u root -proot
 
@@ -88,8 +97,10 @@ Processing databases
 (略)
 Phase 7/7: Running 'FLUSH PRIVILEGES'
 OK
+
 ```
 5. 輸入以下指令重新啓用並開啓系統服務
+
 ```
 sudo systemctl enable mariadb --now
 ```
