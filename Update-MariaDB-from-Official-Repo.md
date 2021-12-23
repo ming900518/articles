@@ -22,7 +22,7 @@
 
 <img width="777" alt="Screen Shot 2021-12-23 at 4 42 01 PM" src="https://user-images.githubusercontent.com/15919723/147213111-803a4008-e784-4dbb-ad96-d44f18894000.png">
 
-當我正在思考10.3為什麼會小於10.3.32的時候
+當我正在思考10.3.32為什麼會小於10.3的時候
 
 往下一翻才發現
 
