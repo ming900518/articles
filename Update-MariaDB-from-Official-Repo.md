@@ -71,14 +71,14 @@ $ curl -LsS https://r.mariadb.com/downloads/mariadb_repo_setup | sudo bash
 
 ```
 sudo apt install mariadb-server -y
-
 ```
+
 4. 輸入以下指令更新資料庫
 
 ```
 sudo mysql_upgrade -u [資料庫帳號] -p[資料庫密碼，注意參數跟密碼中間不能輸入空白]
-
 ```
+
 結果應該會長這樣
 
 ```
@@ -97,8 +97,8 @@ Processing databases
 (略)
 Phase 7/7: Running 'FLUSH PRIVILEGES'
 OK
-
 ```
+
 5. 輸入以下指令重新啓用並開啓系統服務
 
 ```
@@ -111,3 +111,30 @@ sudo systemctl enable mariadb --now
 
 ![Screen Shot 2021-12-23 at 5 07 33 PM](https://user-images.githubusercontent.com/15919723/147216562-da82e34e-f40b-4d59-9036-d30bec740417.png)
 
+## 如果不能連到外網去......
+
+有很多地方的Server不讓連外網，這樣就有點麻煩了
+
+1. 先在一台有網路、系統版本相同的電腦/虛擬機裡開個資料夾
+
+2. 輸入以下指令（範例是MariaDB 10.6.5的，Dependency應該是不會變但DB版本可能要更新一下）
+
+```
+sudo apt-get download mariadb-server mariadb-server-10.6 debconf perl-base dpkg tar libacl1 libc6 libcrypt1 libgcc-s1 gcc-10-base libselinux1 libpcre2-8-0 libbz2-1.0 liblzma5 libzstd1 zlib1g galera-4 libssl1.1 libstdc++6 gawk libgmp10 libmpfr6 libreadline8 libtinfo6 readline-common install-info libsigsegv2 iproute2 libbsd0 libcap2 libcap2-bin libdb5.3 libelf1 libmnl0 libxtables12 libdbi-perl perl libperl5.30 libgdbm-compat4 libgdbm6 perl-modules-5.30 perl-base libpam0g libaudit1 libaudit-common libcap-ng0 lsb-base lsof mariadb-client-10.6 debianutils mariadb-client-core-10.6 libmariadb3 mariadb-common mysql-common libncurses6 libreadline5 perl:any mariadb-server-core-10.6 libaio1 liblz4-1 libpmem1 libsystemd0 libgcrypt20 libgpg-error0 passwd libpam-modules libpam-modules-bin libsemanage1 libsemanage-common libsepol1 procps init-system-helpers libncursesw6 libprocps8 psmisc rsync libpopt0 socat libwrap0 adduser
+```
+
+3. 把下載好的deb包想辦法丟到要安裝DB的伺服器，並切換到deb包的目錄
+
+4. 在要安裝DB的伺服器上輸入以下指令進行安裝
+
+```
+sudo apt remove mariadb-server && sudo dpkg -i *.deb
+```
+
+5. 沒有出錯的話，就可以繼續根據上一段的第四步繼續操作了
+
+如果有錯，輸入以下指令並按照畫面中出現的錯誤提示解決衝突
+
+```
+sudo apt --fix-broken install
+```
