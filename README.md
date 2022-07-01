@@ -8,3 +8,4 @@
 5. [Springdoc OpenAPI UI（Swagger）爬坑記錄（持續更新）](Springdoc.md)
 6. [Spring Boot Admin & Spring Security爬坑記錄](SBA-with-SpringSecurity.md)
 7. [把舊版Ubuntu的MariaDB更新到最新版](Update-MariaDB-from-Official-Repo.md)
+7. [在MariaDB中存放&讀取Array](MariaDB-Store-Array.md)
