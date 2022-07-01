@@ -29,10 +29,8 @@
 接著跑去MariaDB的Knowledge Base，翻了大概10分鐘找到[JSON的章節](https://mariadb.com/kb/en/json-functions/)
 
 然後我看到了 [`JSON_TABLE()`](https://mariadb.com/kb/en/json_table/)  
-這個function可以把JSON做成Table 
-這樣就可以直接將Query Result用 `List` 接收了
-
-這樣就能達到我想要實現的功能了
+這個function可以把JSON做成Table  
+這樣就可以直接將Query Result用 `List` 接收，達到我想要實現的功能了
 
 ## 測試
 
