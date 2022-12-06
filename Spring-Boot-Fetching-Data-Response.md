@@ -90,7 +90,7 @@ public @ResponseBody Mono<ResponseEntity<Resource>> getDataFromApi(@RequestBody 
 
 > 注意在製作 Response 的時候，我們除了有加上`Content-Type` 與 `Content-Disposition` 兩個 header，另外多加了一個 header `Access-Control-Expose-Headers`，這是為了讓前端可以取得 `Content-Disposition` header 的內容。
 
-## 同場加映 - Angular（TypeScript）
+### 同場加映 - Angular（TypeScript）
 
 ```typescript
 downloadData() {
