@@ -2,56 +2,56 @@
   {
     "name": "在Tomcat中關閉不安全的TLS 1.0與1.1",
     "date": "2021-03-10T04:40:51Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Tomcat-Disable-Unsecure-TLS.md"
+    "url": "Tomcat-Disable-Unsecure-TLS.md"
   },
   {
     "name": "Tomcat的Slow HTTP Denial of Service Attack弱點處理方式",
     "date": "2021-03-10T06:22:38Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Tomcat-Resolve-Slow-HTTP-DoS-Attack.md"
+    "url": "Tomcat-Resolve-Slow-HTTP-DoS-Attack.md"
   },
   {
     "name": "安全的SSH連線",
     "date": "2021-08-13T01:59:17Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/SSH-Secure-Settings.md"
+    "url": "SSH-Secure-Settings.md"
   },
   {
     "name": "在Spring Boot中連接多資料庫",
     "date": "2021-09-01T01:45:08Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Spring-Boot-Multi-Datasource.md"
+    "url": "Spring-Boot-Multi-Datasource.md"
   },
   {
     "name": "Springdoc OpenAPI UI（Swagger）爬坑記錄（持續更新）",
     "date": "2021-08-31T03:31:59Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Springdoc.md"
+    "url": "Springdoc.md"
   },
   {
     "name": "Spring Boot Admin & Spring Security爬坑記錄",
     "date": "2021-09-01T03:12:07Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/SBA-with-SpringSecurity.md"
+    "url": "SBA-with-SpringSecurity.md"
   },
   {
     "name": "把舊版Ubuntu的MariaDB更新到最新版",
     "date": "2021-12-25T02:40:14Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Update-MariaDB-from-Official-Repo.md"
+    "url": "Update-MariaDB-from-Official-Repo.md"
   },
   {
     "name": "在MariaDB中存放&讀取Array",
     "date": "2022-07-01T07:46:27Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/MariaDB-Store-Array.md"
+    "url": "MariaDB-Store-Array.md"
   },
   {
     "name": "透過Spring從其他API取得二進位檔案後回傳",
     "date": "2022-12-06T06:09:46Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Spring-Boot-Fetching-Data-Response.md"
+    "url": "Spring-Boot-Fetching-Data-Response.md"
   },
   {
     "name": "大三統計套裝軟體（Excel）上課操作記錄",
     "date": "2021-10-23T09:41:37Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Excel-Operation-Log.md"
+    "url": "Excel-Operation-Log.md"
   },
   {
     "name": "從PostgreSQL中查詢資料表資訊",
     "date": "2022-08-02T09:14:33Z",
-    "url": "https://raw.githubusercontent.com/ming900518/articles/main/Postgres-Query-Table-Info.md"
+    "url": "Postgres-Query-Table-Info.md"
   }
 ]
