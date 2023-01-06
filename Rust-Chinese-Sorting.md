@@ -2,7 +2,7 @@
 
 ## TL;DR
 
-用這個我寫的crate進行排序就可以了，方便省事：https://crates.io/crates/sort_zh
+用這個我寫的crate進行排序就可以了，方便省事：[https://crates.io/crates/sort_zh](https://crates.io/crates/sort_zh)
 
 ## 問題
 
