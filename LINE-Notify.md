@@ -75,6 +75,7 @@ async fn callback(param: Query<CallbackValue>) -> impl IntoResponse {
 1. 將用戶導向 LINE Notify 提供的 GET API，供用戶進行驗證與確定推播群組  
     上方的 Rust Code 透過 Router 產生 HTTP Status 302，將所有連線到 Root 的用戶導向  
     網址中需要提供 Parameter 如下
+    
 
     | Parameter       | Description                                                                                                                    |
     |-----------------|--------------------------------------------------------------------------------------------------------------------------------|
@@ -85,10 +86,12 @@ async fn callback(param: Query<CallbackValue>) -> impl IntoResponse {
     | `state`         | 指定需要一併回傳回 Callback URL 的值，作為避免 CSRF 攻擊的手段                                                                 |
     | `response_mode` | 非必填，這邊可以設定是否採用POST導向 如需設定可參考 [Spec](https://openid.net/specs/oauth-v2-form-post-response-mode-1_0.html) |
 
+    
     > 這邊也可以直接利用前端進行導向，不一定需要透過後端處理
 
 2. 待用戶於 LINE 頁面完成操作後，LINE 將會把資訊回傳到 GET API Parameter 中 `redirect_uri` 指定的目標  
     在上方的 Rust Code 中，我建立了一支 API `/api/callback`，接收回傳資訊
+    
     成功時的Parameter如下
 
     | Parameter | Description              |
