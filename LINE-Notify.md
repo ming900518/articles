@@ -4,6 +4,8 @@
 
 ## 設定 LINE Notify Registered Service
 串接 LINE Notify, 需要先在 LINE Notify 註冊一個 Service
+[點我前往LINE Notify](https://notify-bot.line.me/en/)
+
 ![swappy-20230117_090618](https://user-images.githubusercontent.com/15919723/212791581-7d7622b8-e3e2-44d6-8325-f768d3bdd5e4.png)
 
 註冊 Service 時，按需填寫表格中的內容
