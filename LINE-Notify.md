@@ -25,7 +25,7 @@
 
 用戶需要透過 LINE Notify 的 API 建立 Token，我們才能進行通知的推播
 
-這邊提供利用 Rust Axum Framework 建立的 API Service 範例以供參考
+### Rust Axum 範例
 
 ```rust
 #![forbid(unsafe_code)]
@@ -73,6 +73,40 @@ async fn callback(param: Query<CallbackValue>) -> impl IntoResponse {
     }
 }
 
+```
+
+### Typescript Express 範例
+```typescript
+import { Router, Request, Response, NextFunction } from 'express';
+
+interface CallbackValue {
+    code?: string,
+    state: string,
+    error?: string,
+    error_description?: string
+}
+
+const express = require('express')
+const app = express()
+
+app.get('/', (req: Request, res: Response, next: NextFunction) => {
+    res.redirect(302, 'https://notify-bot.line.me/oauth/authorize?response_type=code&client_id=tQJrXoXNwVParKfUQ0LZzA&redirect_uri=https://api.url/api/callback&scope=notify&state=12345');
+});
+
+app.get('/api/callback', async (req: Request, res: Response, next: NextFunction) => {
+    const param = req.query;
+    if (param.code) {
+        res.status(200).send(`State: ${param.state}. Token: ${param.code}`);
+    } else {
+        res.status(500).send(`Error occured: ${param.error || 'No error code'}, description from LINE: ${param.error_description || 'No error description'}`);
+    }
+});
+
+const port = 3000;
+
+app.listen(port, () => {
+    console.log(`Listening on ${port}`);
+});
 ```
 
 1. 將用戶導向 LINE Notify 提供的 GET API，供用戶進行驗證與確定推播群組  
