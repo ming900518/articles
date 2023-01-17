@@ -76,7 +76,7 @@ async fn callback(param: Query<CallbackValue>) -> impl IntoResponse {
 ```
 
 ### Typescript Express 範例
-```typescript
+```javascript
 import { Router, Request, Response, NextFunction } from 'express';
 
 interface CallbackValue {
