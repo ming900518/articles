@@ -489,11 +489,9 @@ https://raw.githubusercontent.com/把我替換成用戶名/把我替換成 Repo 
 
 由於 GitHub Pages 會根據網址的路徑分配給不同 Repository，所以會先行攔截我組合給 Yew componment 的參數，導致 Routing 出錯，GitHub 回傳 404。
 
-這個問題雖然有 [Workaround](https://github.com/rafgraph/spa-github-pages)，但我自己測試時發現，這會導致一些App沒辦法正常取得網頁的內容，最後考量到使用者體驗跟管理的方便性（還有 [SSL 的問題](https://twitter.com/mingchang137/status/1618951012693446657?s=20)），我就將網頁直接移到 Cloudflare Pages 去了。
+這個問題雖然有 [Workaround](https://github.com/rafgraph/spa-github-pages)，但我自己測試時發現，這會導致一些 App 沒辦法正常取得網頁的內容，最後考量到使用者體驗跟管理的方便性（還有 [SSL 的問題](https://twitter.com/mingchang137/status/1618951012693446657?s=20)），我就將網頁直接移到 Cloudflare Pages 去了。
 
-就當我以為這件事圓滿結束的時候，預期外的狀況發生了：這支 iPhone 12 mini，就卡在這個頁面長達 10 分鐘載不進去......
-
-![IMG_5B6551C61AD2-1](https://user-images.githubusercontent.com/15919723/215337842-8ac9d302-746f-4ffd-ae8c-32f064582850.jpeg)
+就當我以為這件事圓滿結束的時候，預期外的狀況發生了：我的 iPhone 12 mini，卡在載入中頁面長達 10 分鐘載不進去......
 
 ## 性能不夠 & 網路不穩的救世主 - Server Side Rendering
 
