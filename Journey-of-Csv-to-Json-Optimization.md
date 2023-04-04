@@ -15,7 +15,7 @@
 
 > [CSV-to-JSON GitHub Repository 連結](https://github.com/ming900518/csv-to-json) 
 > 
-> Releases 裡有已經編譯好的程式，沒有特別標註的話都是 for aarch64 macOS 的 binary）
+> Releases 裡有已經編譯好的程式，沒有特別標註的話都是 for aarch64 macOS 的 binary
 
 由於 Rust 的相關 crate 我都還算熟悉，結果只花了一個小時就搓出來了 😂
 正在思考還有什麼事情可以做的時候，突然想到自己好像很久沒有優化程式了
