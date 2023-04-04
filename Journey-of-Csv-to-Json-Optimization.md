@@ -1,17 +1,16 @@
 # 從 3.3 秒到 1.8 秒 - CSV 至 JSON 轉換工具優化記錄
 
-> GitHub Repository: https://github.com/ming900518/csv-to-json
-
 ## 前言
 
 由於這幾天是台灣的春假（清明節連假），所以想說利用這個機會來
-~~逃離工作時被逼著用的悲劇 JS 跟 TS~~ 做點工作之外的工作
+~~逃離工作時被逼著用的 JS 跟 TS~~ 做點工作之外的事
 
 正好我有個案子不想架後端與資料庫，想要利用 JSON 來儲存大量的資料，就計劃寫個 CSV
 轉 JSON 的小工具來用
 
-由於 Rust 的相關 crate 我都還算熟悉，結果只花了一個小時就搓出來了 😂
+> GitHub Repository: https://github.com/ming900518/csv-to-json
 
+由於 Rust 的相關 crate 我都還算熟悉，結果只花了一個小時就搓出來了 😂
 正在思考還有什麼事情可以做的時候，突然想到自己好像很久沒有優化程式了
 
 原本我還胸有成竹，自己都用上了 **BLAZLINGLY FAST 🚀🚀🚀** 的可愛 🦀
@@ -23,13 +22,13 @@
 
 測出來，3.3 秒（四捨五入）
 
-**WAT**
+WAT
 
 於是這個我花了一個小時寫出來的 CLI Binary ，就和我一起開始了為期兩天的優化之旅
 
 > 以下的每個章節都會附上與**最初版**程式相比的「**總計**性能進步百分比」跟「執行平均時間（秒）」，供讀者參考
 
-## 第一步（18%, 2.8s）：資料平行 [Rayon](https://crates.io/crates/rayon)
+## 第一步（18% 、 2.8s）：資料平行 [Rayon](https://crates.io/crates/rayon)
 
 其實我很早就知道這個 crate 了，但由於我寫後端嘛， Tokio
 就已經很香了，反而用不太到 Rayon
@@ -66,12 +65,13 @@ Rayon 是一個 data-parallelism library ，可以將傳統的迭代器
     ```
 
 </details>
+<br>
 
 取得了 18% 的性能進步。
 
 > 到這邊的程式碼：[csv-to-json 0.1.0](https://github.com/ming900518/csv-to-json/tree/0.1.0)
 
-## 第二步（24%, 2.6s）：用對的工具做對的事 [indexmap](https://crates.io/crates/indexmap)
+## 第二步（24% 、 2.6s）：用對的工具做對的事 [indexmap](https://crates.io/crates/indexmap)
 
 由於需要保留原始 CSV 的欄位排序，所以無法採用 std 中的
 [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html)
@@ -110,12 +110,13 @@ Preserves insertion order as long as you don't call `.remove()`
     ```
 
 </details>
+<br>
 
 性能進步從 18% 增加到 24% 。
 
 > 到這邊的程式碼：[csv-to-json 0.2.0](https://github.com/ming900518/csv-to-json/tree/0.2.0)
 
-## 第三步（55%, 2.1s）：無心插柳柳成蔭 [Polars]（https://crates.io/crates/polars）
+## 第三步（55% 、 2.1s）：無心插柳柳成蔭 [Polars](https://crates.io/crates/polars)
 
 性能提升總是讓人開心，但......還能不能再更快一點呢？離兩秒內的目標還有蠻大的差距
 
@@ -157,6 +158,7 @@ lightning fast
     ```
 
 </details>
+<br>
 
 性能進步再次從 24% 增加到 55% 。
 
@@ -164,7 +166,7 @@ lightning fast
 > [`get_row`](https://pola-rs.github.io/polars/polars/frame/struct.DataFrame.html#method.get_row)
 > 這個 method 因性能不好而不建議使用，所以這邊應該還有改進的可能（？）
 
-## 第四步（60%, 2.0s）：不如預期 SIMD
+## 第四步（60% 、 2.0s）：不如預期 SIMD
 
 正當我滿意的準備 `git push` 時， Polars
 的文件有個[小段落](https://pola-rs.github.io/polars/polars/index.html#simd)引起了我的注意
@@ -210,6 +212,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
     ```
 
 </details>
+<br>
 
 性能進步只從 55% 小幅增加到 60% ，遠遠不如我預期中的秒天秒地，有種被騙的感覺
 
@@ -221,26 +224,26 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 <details>
     <summary>在 Intel Core i7 12700（支援 AVX2 指令集，AVX-512 不支援）測試的結果</summary>
 
-    ```
-    Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
-      Time (mean ± σ):      2.644 s ±  0.010 s    [User: 2.039 s, System: 0.605 s]
-      Range (min … max):    2.637 s …  2.660 s    5 runs
+        ```
+        Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
+          Time (mean ± σ):      2.644 s ±  0.010 s    [User: 2.039 s, System: 0.605 s]
+          Range (min … max):    2.637 s …  2.660 s    5 runs
 
-    Benchmark 2: ./csv-to-json-simd -i test.csv -o output-2.json
-      Time (mean ± σ):      1.978 s ±  0.007 s    [User: 2.702 s, System: 1.082 s]
-      Range (min … max):    1.969 s …  1.989 s    5 runs
-    Summary
-      './csv-to-json-simd -i test.csv -o output-2.json' ran
-        1.34 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
-    ```
-
+        Benchmark 2: ./csv-to-json-simd -i test.csv -o output-2.json
+          Time (mean ± σ):      1.978 s ±  0.007 s    [User: 2.702 s, System: 1.082 s]
+          Range (min … max):    1.969 s …  1.989 s    5 runs
+        Summary
+          './csv-to-json-simd -i test.csv -o output-2.json' ran
+            1.34 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
+        ```
     可以看到，即使是在支援更多 SIMD 指令集的電腦上，也沒有顯著的性能進步
 
 </details>
+<br>
 
 > 到這邊的程式碼：[csv-to-json 0.3.0](https://github.com/ming900518/csv-to-json/tree/0.3.0)
 
-## 第五步（83%, 1.8s）：看圖優化，對症下藥 [flamegraph](https://github.com/flamegraph-rs/flamegraph) （CLI 工具）
+## 第五步（83% 、 1.8s）：看圖優化，對症下藥 [flamegraph](https://github.com/flamegraph-rs/flamegraph) （CLI 工具）
 
 當我仔細的觀察程式的 CPU 佔用時，其實有個點一直讓我很不解：明明都用上了 Rayon
 ，怎麼在全核心跑完後，程式還會繼續用單線程執行一小段時間呢？
@@ -267,6 +270,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 
 <details>
     <summary>測試結果</summary>
+
     ```
     Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
       Time (mean ± σ):      3.223 s ±  0.019 s    [User: 2.605 s, System: 0.533 s]
@@ -302,6 +306,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
     ```
 
 </details>
+<br>
 
 比起原始版快了 83% ，平均用時也壓到兩秒以內了！
 
