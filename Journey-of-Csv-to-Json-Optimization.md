@@ -53,8 +53,7 @@ Rayon 是一個 data-parallelism library ，可以將傳統的迭代器
 > 中有用到 scope 外面的變數，需要 impl Sync trait 或者用
 > [`Arc`](https://doc.rust-lang.org/stable/std/sync/struct.Arc.html) 包住才行。
 >
-> Rayon 如何實現 Parallel Iterator
-> ：https://github.com/rayon-rs/rayon/blob/master/src/iter/plumbing/README.md
+> [Rayon 如何實現 Parallel Iterator](https://github.com/rayon-rs/rayon/blob/master/src/iter/plumbing/README.md)
 
 改完，我們利用 hyperfine 進行測試
 
