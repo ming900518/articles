@@ -20,7 +20,7 @@
 由於 Rust 的相關 crate 我都還算熟悉，結果只花了一個小時就搓出來了 😂
 正在思考還有什麼事情可以做的時候，突然想到自己好像很久沒有優化程式了
 
-原本我還胸有成竹，自己都用上了 **BLAZLINGLY FAST 🚀🚀🚀** 的可愛 🦀
+原本我還胸有成竹，自己都用上了 **BLAZINGLY FAST 🚀🚀🚀** 的可愛 🦀
 ，應該不會太慢才對？我賭兩秒以內！
 
 <img width="450" alt="meme1" src="https://user-images.githubusercontent.com/15919723/229833580-eb89967b-0780-4190-a6b3-1180d13e7fd5.jpg">
