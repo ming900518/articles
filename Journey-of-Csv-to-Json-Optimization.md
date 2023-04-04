@@ -3,7 +3,7 @@
 > <img width="1440" alt="bg" src="https://user-images.githubusercontent.com/15919723/229822229-f17c4c41-c412-4ed0-95c3-f06c8afe8d3d.png">
 > 程式性能測試截圖
 > 
-> 背景圖 by HitenKei https://twitter.com/HitenKei
+> 背景圖 by [HitenKei](https://twitter.com/HitenKei)
 
 ## 前言
 
@@ -13,7 +13,9 @@
 正好我有個案子不想架後端與資料庫，想要利用 JSON 來儲存大量的資料，就計劃寫個 CSV
 轉 JSON 的小工具來用
 
-> GitHub Repository: https://github.com/ming900518/csv-to-json
+> [CSV-to-JSON GitHub Repository 連結](https://github.com/ming900518/csv-to-json) 
+> 
+> Releases 裡有已經編譯好的程式，沒有特別標註的話都是 for aarch64 macOS 的 binary）
 
 由於 Rust 的相關 crate 我都還算熟悉，結果只花了一個小時就搓出來了 😂
 正在思考還有什麼事情可以做的時候，突然想到自己好像很久沒有優化程式了
@@ -21,13 +23,15 @@
 原本我還胸有成竹，自己都用上了 **BLAZLINGLY FAST 🚀🚀🚀** 的可愛 🦀
 ，應該不會太慢才對？我賭兩秒以內！
 
-> - 硬體：M1 MacBook Air, macOS 13.2
+<img width="450" alt="meme1" src="https://user-images.githubusercontent.com/15919723/229833580-eb89967b-0780-4190-a6b3-1180d13e7fd5.jpg">
+
+> - 硬體：M1 MacBook Air, macOS 13.3
 > - 測試用 CSV 檔：就是一個全都是字， 573.5 MB 的 CSV
 > - 測試工具：[`hyperfine`](https://github.com/sharkdp/hyperfine)
 
 測出來，3.3 秒（四捨五入）
 
-WAT
+<img width="450" alt="meme2" src="https://user-images.githubusercontent.com/15919723/229834730-b04f12db-e96d-40b4-b9ff-817931620872.jpeg">
 
 於是這個我花了一個小時寫出來的 CLI Binary ，就和我一起開始了為期兩天的優化之旅
 
@@ -176,8 +180,8 @@ lightning fast
 SIMD ？？？ SIMD 還能拿來加速這種運算？
 
 > 下面沒有特別標註的話，都是在 M1 MacBook 上用 ARM NEON 指令集測出來的結果
-> 我沒有支援 AVX-512 的 x86_64 PC 可以測試，要不然我還蠻想知道 AVX-512
-> 到底有多快的
+
+> 我沒有支援 AVX-512 的 x86_64 PC 可以測試，要不然我還蠻想知道 AVX-512 到底有多快
 
 裝上 nightly Rust toolchain ，features
 裝好，`RUSTFLAGS="-C target-cpu=native" cargo +nightly build --release`！
