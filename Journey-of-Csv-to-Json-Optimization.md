@@ -1,5 +1,10 @@
 # 從 3.3 秒到 1.8 秒 - CSV 至 JSON 轉換工具優化記錄
 
+> <img width="1440" alt="bg" src="https://user-images.githubusercontent.com/15919723/229822229-f17c4c41-c412-4ed0-95c3-f06c8afe8d3d.png">
+> 程式性能測試截圖
+> 
+> 背景圖 by HitenKei https://twitter.com/HitenKei
+
 ## 前言
 
 由於這幾天是台灣的春假（清明節連假），所以想說利用這個機會來
@@ -28,7 +33,7 @@ WAT
 
 > 以下的每個章節都會附上與**最初版**程式相比的「**總計**性能進步百分比」跟「執行平均時間（秒）」，供讀者參考
 
-## 第一步（18% 、 2.8s）：資料平行 [Rayon](https://crates.io/crates/rayon)
+## 第一步（18% - 2.8s）：資料平行 [Rayon](https://crates.io/crates/rayon)
 
 其實我很早就知道這個 crate 了，但由於我寫後端嘛， Tokio
 就已經很香了，反而用不太到 Rayon
@@ -51,7 +56,7 @@ Rayon 是一個 data-parallelism library ，可以將傳統的迭代器
 
 <details>
     <summary>測試結果</summary>
-    ```
+    
     Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
       Time (mean ± σ):      3.286 s ±  0.021 s    [User: 2.616 s, System: 0.585 s]
       Range (min … max):    3.260 s …  3.314 s    5 runs
@@ -62,7 +67,6 @@ Rayon 是一個 data-parallelism library ，可以將傳統的迭代器
 
     Summary
       './csv-to-json-rayon -i test.csv -o output-2.json' ran 1.18 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
-    ```
 
 </details>
 <br>
@@ -71,7 +75,7 @@ Rayon 是一個 data-parallelism library ，可以將傳統的迭代器
 
 > 到這邊的程式碼：[csv-to-json 0.1.0](https://github.com/ming900518/csv-to-json/tree/0.1.0)
 
-## 第二步（24% 、 2.6s）：用對的工具做對的事 [indexmap](https://crates.io/crates/indexmap)
+## 第二步（24% - 2.6s）：用對的工具做對的事 [indexmap](https://crates.io/crates/indexmap)
 
 由於需要保留原始 CSV 的欄位排序，所以無法採用 std 中的
 [`HashMap`](https://doc.rust-lang.org/stable/std/collections/struct.HashMap.html)
@@ -90,7 +94,7 @@ Preserves insertion order as long as you don't call `.remove()`
 
 <details>
     <summary>測試結果</summary>
-    ```
+
     Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
       Time (mean ± σ):      3.248 s ±  0.014 s    [User: 2.614 s, System: 0.573 s]
       Range (min … max):    3.224 s …  3.259 s    5 runs
@@ -107,7 +111,6 @@ Preserves insertion order as long as you don't call `.remove()`
       './csv-to-json-indexmap -i test.csv -o output-3.json' ran
         1.07 ± 0.01 times faster than './csv-to-json-rayon -i test.csv -o output-2.json'
         1.24 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
-    ```
 
 </details>
 <br>
@@ -116,7 +119,7 @@ Preserves insertion order as long as you don't call `.remove()`
 
 > 到這邊的程式碼：[csv-to-json 0.2.0](https://github.com/ming900518/csv-to-json/tree/0.2.0)
 
-## 第三步（55% 、 2.1s）：無心插柳柳成蔭 [Polars](https://crates.io/crates/polars)
+## 第三步（55% - 2.1s）：無心插柳柳成蔭 [Polars](https://crates.io/crates/polars)
 
 性能提升總是讓人開心，但......還能不能再更快一點呢？離兩秒內的目標還有蠻大的差距
 
@@ -133,7 +136,7 @@ lightning fast
 
 <details>
     <summary>測試結果</summary>
-    ```
+
     Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
       Time (mean ± σ):      3.258 s ±  0.024 s    [User: 2.630 s, System: 0.563 s]
       Range (min … max):    3.235 s …  3.292 s    5 runs
@@ -155,7 +158,6 @@ lightning fast
         1.22 ± 0.01 times faster than './csv-to-json-indexmap -i test.csv -o output-3.json'
         1.31 ± 0.01 times faster than './csv-to-json-rayon -i test.csv -o output-2.json'
         1.55 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
-    ```
 
 </details>
 <br>
@@ -166,7 +168,7 @@ lightning fast
 > [`get_row`](https://pola-rs.github.io/polars/polars/frame/struct.DataFrame.html#method.get_row)
 > 這個 method 因性能不好而不建議使用，所以這邊應該還有改進的可能（？）
 
-## 第四步（60% 、 2.0s）：不如預期 SIMD
+## 第四步（60% - 2.0s）：不如預期 SIMD
 
 正當我滿意的準備 `git push` 時， Polars
 的文件有個[小段落](https://pola-rs.github.io/polars/polars/index.html#simd)引起了我的注意
@@ -182,7 +184,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 
 <details>
     <summary>測試結果</summary>
-    ```
+
     Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
       Time (mean ± σ):      3.271 s ±  0.009 s    [User: 2.617 s, System: 0.566 s]
       Range (min … max):    3.260 s …  3.284 s    5 runs
@@ -209,7 +211,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
         1.26 ± 0.04 times faster than './csv-to-json-indexmap -i test.csv -o output-3.json'
         1.36 ± 0.04 times faster than './csv-to-json-rayon -i test.csv -o output-2.json'
         1.60 ± 0.05 times faster than './csv-to-json -i test.csv -o output-1.json'
-    ```
+    </code>
 
 </details>
 <br>
@@ -224,18 +226,17 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 <details>
     <summary>在 Intel Core i7 12700（支援 AVX2 指令集，AVX-512 不支援）測試的結果</summary>
 
-        ```
-        Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
-          Time (mean ± σ):      2.644 s ±  0.010 s    [User: 2.039 s, System: 0.605 s]
-          Range (min … max):    2.637 s …  2.660 s    5 runs
+    Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
+      Time (mean ± σ):      2.644 s ±  0.010 s    [User: 2.039 s, System: 0.605 s]
+      Range (min … max):    2.637 s …  2.660 s    5 runs
 
-        Benchmark 2: ./csv-to-json-simd -i test.csv -o output-2.json
-          Time (mean ± σ):      1.978 s ±  0.007 s    [User: 2.702 s, System: 1.082 s]
-          Range (min … max):    1.969 s …  1.989 s    5 runs
-        Summary
-          './csv-to-json-simd -i test.csv -o output-2.json' ran
-            1.34 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
-        ```
+    Benchmark 2: ./csv-to-json-simd -i test.csv -o output-2.json
+      Time (mean ± σ):      1.978 s ±  0.007 s    [User: 2.702 s, System: 1.082 s]
+      Range (min … max):    1.969 s …  1.989 s    5 runs
+    Summary
+      './csv-to-json-simd -i test.csv -o output-2.json' ran
+        1.34 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
+
     可以看到，即使是在支援更多 SIMD 指令集的電腦上，也沒有顯著的性能進步
 
 </details>
@@ -243,7 +244,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 
 > 到這邊的程式碼：[csv-to-json 0.3.0](https://github.com/ming900518/csv-to-json/tree/0.3.0)
 
-## 第五步（83% 、 1.8s）：看圖優化，對症下藥 [flamegraph](https://github.com/flamegraph-rs/flamegraph) （CLI 工具）
+## 第五步（83% - 1.8s）：看圖優化，對症下藥 [flamegraph](https://github.com/flamegraph-rs/flamegraph) （CLI 工具）
 
 當我仔細的觀察程式的 CPU 佔用時，其實有個點一直讓我很不解：明明都用上了 Rayon
 ，怎麼在全核心跑完後，程式還會繼續用單線程執行一小段時間呢？
@@ -271,7 +272,6 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 <details>
     <summary>測試結果</summary>
 
-    ```
     Benchmark 1: ./csv-to-json -i test.csv -o output-1.json
       Time (mean ± σ):      3.223 s ±  0.019 s    [User: 2.605 s, System: 0.533 s]
       Range (min … max):    3.204 s …  3.245 s    5 runs
@@ -303,7 +303,6 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
         1.43 ± 0.01 times faster than './csv-to-json-indexmap -i test.csv -o output-3.json'
         1.56 ± 0.01 times faster than './csv-to-json-rayon -i test.csv -o output-2.json'
         1.83 ± 0.01 times faster than './csv-to-json -i test.csv -o output-1.json'
-    ```
 
 </details>
 <br>
@@ -341,8 +340,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 5. flamegraph 是個好工具，不僅可以幫助自己找出程式的性能瓶頸，也能藉此理解每個
    function 下的實現方式。
 
-從去年開始，我每個連假都學到了一點東西
-
-這次的題目雖然聽起來有點廢，但反而學到了更多，也是挺好笑的
+從去年開始，我每個連假都學到了一點東西，未來也會繼續學習！
 
 感謝您的閱讀！
+
