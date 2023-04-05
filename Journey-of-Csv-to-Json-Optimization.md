@@ -1,4 +1,4 @@
-# 83% 性能提升！CSV 至 JSON 轉換工具優化記錄
+# 83% 性能提升！CSV 至 JSON 轉換工具（fast-csv-to-json）優化記錄
 
 > <img width="1440" alt="bg" src="https://user-images.githubusercontent.com/15919723/229822229-f17c4c41-c412-4ed0-95c3-f06c8afe8d3d.png">
 > 程式性能測試截圖
@@ -13,9 +13,11 @@
 正好我有個案子不想架後端與資料庫，想要利用 JSON 來儲存大量的資料，就計劃寫個 CSV
 轉 JSON 的小工具來用
 
-> [CSV-to-JSON GitHub Repository 連結](https://github.com/ming900518/csv-to-json) 
+> [fast-csv-to-json GitHub Repository 連結](https://github.com/ming900518/csv-to-json) 
+> （原名 csv-to-json ，名字被人用走了只好換個名字 😥）
 > 
-> Releases 裡有已經編譯好的程式，沒有特別標註的話都是 for aarch64 macOS 的 binary
+> 可利用 `cargo install fast-csv-to-json` 安裝不含 Rust nightly feature 的版本  
+> Releases 裡也有已經編譯好的程式，沒有特別標註的話都是 for aarch64 macOS 的 binary
 
 由於 Rust 的相關 crate 我都還算熟悉，結果只花了一個小時就搓出來了 😂
 正在思考還有什麼事情可以做的時候，突然想到自己好像很久沒有優化程式了
@@ -76,7 +78,7 @@ Rayon 是一個 data-parallelism library ，可以將傳統的迭代器
 
 取得了 18% 的性能進步。
 
-> 到這邊的程式碼：[csv-to-json 0.1.0](https://github.com/ming900518/csv-to-json/tree/0.1.0)
+> 到這邊的程式碼：[fast-csv-to-json 0.1.0](https://github.com/ming900518/csv-to-json/tree/0.1.0)
 
 ## 第二步（24% - 2.6s）：用對的工具做對的事 [indexmap](https://crates.io/crates/indexmap)
 
@@ -120,7 +122,7 @@ Preserves insertion order as long as you don't call `.remove()`
 
 性能進步從 18% 增加到 24% 。
 
-> 到這邊的程式碼：[csv-to-json 0.2.0](https://github.com/ming900518/csv-to-json/tree/0.2.0)
+> 到這邊的程式碼：[fast-csv-to-json 0.2.0](https://github.com/ming900518/csv-to-json/tree/0.2.0)
 
 ## 第三步（55% - 2.1s）：無心插柳柳成蔭 [Polars](https://crates.io/crates/polars)
 
@@ -245,7 +247,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 </details>
 <br>
 
-> 到這邊的程式碼：[csv-to-json 0.3.0](https://github.com/ming900518/csv-to-json/tree/0.3.0)
+> 到這邊的程式碼：[fast-csv-to-json 0.3.0](https://github.com/ming900518/csv-to-json/tree/0.3.0)
 
 ## 第五步（83% - 1.8s）：看圖優化，對症下藥 [flamegraph](https://github.com/flamegraph-rs/flamegraph) （CLI 工具）
 
@@ -328,7 +330,7 @@ SIMD ？？？ SIMD 還能拿來加速這種運算？
 未來可能會找個時間嘗試實作 serde_json 搭配 Rayon
 進行平行序列化吧，看起來提升挺大的。
 
-> 到這邊的程式碼：[csv-to-json 0.3.1](https://github.com/ming900518/csv-to-json/tree/0.3.1)
+> 到這邊的程式碼：[fast-csv-to-json 0.3.1](https://github.com/ming900518/csv-to-json/tree/0.3.1)
 
 ## 後記
 
