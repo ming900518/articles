@@ -204,7 +204,7 @@ parentPort!.on("message", (array: Uint16Array) => {
 
 大概就是我這邊原本要擺的文字吧
 
-但今天寫這篇文章前幾個小時，我把新程式拿去跟舊程式進行壓測，卻只看到了 `10%`
+但今天寫這篇文章前幾個小時，我把新程式拿去跟舊程式進行壓測，卻只看到了 10%
 不到的性能進步
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">發現就算把 Listener 移到 Worker Threads ，性能提升也有限……</p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1645634737145540608?ref_src=twsrc%5Etfw">April 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
@@ -214,7 +214,7 @@ parentPort!.on("message", (array: Uint16Array) => {
 哪天等到 Express 支援 Worker ，可能才有辦法真正提高性能了。
 
 > 或許有人會說：「寫 JavaScript
-> 嘛，還要啥~~自行車~~性能，而且我看現在寫的程式也沒多慢啊」，
-> 對，現在看起來確實是這樣沒錯，但性能問題會隨著程式量的增加而愈發明顯，
-> 等到不得不改的時候，面對成千上萬行的 code ，根本不知道要如何改起，
+> 嘛，還要啥~~自行車~~性能，而且我看現在寫的程式也沒多慢啊」<br>
+> 對，現在看起來確實是這樣沒錯，但性能問題會隨著程式量的增加而愈發明顯<br>
+> 等到不得不改的時候，面對成千上萬行的 code ，根本不知道要如何改起<br>
 > 那為什麼不是寫的當下就把程式寫好呢？
