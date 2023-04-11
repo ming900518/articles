@@ -1,4 +1,4 @@
-# JavaScript Worker (NodeJS Worker Threads) 實作記錄
+# JavaScript Worker (NodeJS Worker Threads) 使用記錄
 
 ## 緣起
 
@@ -56,7 +56,7 @@ Instance 將 Code
 ，請參考[這篇文章](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API#worker_global_contexts_and_functions)確認可用的
 API
 
-## 實作 Worker
+## 使用 Worker
 
 以下 Code 均為 TypeScript
 
