@@ -210,10 +210,16 @@ parentPort!.on("message", (array: Uint16Array) => {
 
 好吧，我覺得沒救
 
-看起來性能瓶頸應該是在 Express 這塊，哪天等到 Express 支援 Worker ，可能才有辦法真正提高性能了。
+看起來性能瓶頸應該是在 Express 這塊，哪天等到 Express 支援 Worker
+，可能才有辦法真正提高性能了
 
 > 或許有人會說：「寫 JavaScript
 > 嘛，還要啥~~自行車~~性能，而且我看現在寫的程式也沒多慢啊」<br>
 > 對，現在看起來確實是這樣沒錯，但性能問題會隨著程式量的增加而愈發明顯<br>
 > 等到不得不改的時候，面對成千上萬行的 code ，根本不知道要如何改起<br>
 > 那為什麼不是寫的當下就把程式寫好呢？
+
+而且限制實在是太多了， API 又難用
+
+我覺得要性能，還是換語言吧，Go、Rust（Tokio 真的神） 甚至 Java 搭配 Spring
+WebFlux (Project Reactor) 都比 JavaScript 好處理多了。
