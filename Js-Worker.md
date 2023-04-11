@@ -2,13 +2,12 @@
 
 ## 緣起
 
-由於敝人目前任職的公司用 Express 做後端，所以我也只能入境隨俗
+由於敝人目前任職的公司用 Express
+做後端，所以我也只能入境隨俗，結果才沒多久我就感受到 JavaScript/TypeScript
+的最大限制：單線程
 
-結果才沒多久我就感受到 JavaScript/TypeScript 的最大限制：單線程
-
-後端掛了一堆業務邏輯要用到的 EventListener，API 也全都放在同個線程處理
-
-時間一久除了性能上不去之外，還出現過莫名奇妙的 Race
+後端掛了一堆業務邏輯要用到的 EventListener，API
+也全都放在同個線程處理，時間一久除了性能�不去之外，還出現過莫名奇妙的 Race
 Condition（業務邏輯不便展示，總之就是有出現過就是了）
 
 而且買了多核心 CPU
@@ -26,8 +25,8 @@ Condition（業務邏輯不便展示，總之就是有出現過就是了）
 CPU 核心有點事情幹
 
 > 在這邊要先友情勸退一些人：以下的東西較為複雜，且會碰到很多由於 JS 跟 V8
-> 內部實現導致的限制，如果有性能需求，我會建議換個語言或用 WebAssembly
-> 處理會比較方便。
+> 內部實現導致的限制<br>如果有性能需求，我會建議換個語言或用 WebAssembly
+> 處理會比較方便
 
 > <blockquote class="twitter-tweet"><p lang="zh" dir="ltr">多核/多執行緒帶來的性能進步，需要軟體的配合才能體現出來<br><br>JS 寫後端，不要求性能的情況下很簡單<br>如果要求性能，那我真的覺得不如換個語言</p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1645635590719959041?ref_src=twsrc%5Etfw">April 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
@@ -77,7 +76,7 @@ const worker = new Worker("./src/worker.ts");
 如果需要傳輸資料到 Worker ，可以在主線程中透過以下程式達成：
 
 > 注意！只能用 `ArrayBuffer` 定義的記憶體空間，而且只能用
-> [Typed Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)
+> [Typed Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)<br>
 > 想傳物件或字串？往下翻到爬坑的地方，我想出了一個方法解決這件事
 
 ```typescript
@@ -120,7 +119,7 @@ worker.postMessage(array);
 透過這種方式，就不需要再將資料回傳回來了
 
 > 這邊有一點要注意，由於 `Uint16Array` 用了 `SharedArrayBuffer` 的空間
-> initialize ，資料有可能在奇怪的地方被寫入，導致資料不正確/不完整
+> initialize ，資料有可能在奇怪的地方被寫入，導致資料不正確/不完整<br>
 > 如果有這種情形發生，可以考慮改用 Atomic Type 或將資料加鎖
 
 ### 利用資料
@@ -209,9 +208,9 @@ parentPort!.on("message", (array: Uint16Array) => {
 
 <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">發現就算把 Listener 移到 Worker Threads ，性能提升也有限……</p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1645634737145540608?ref_src=twsrc%5Etfw">April 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-好吧，我覺得沒救，看起來是 Express 的問題了
+好吧，我覺得沒救
 
-哪天等到 Express 支援 Worker ，可能才有辦法真正提高性能了。
+看起來性能瓶頸應該是在 Express 這塊，哪天等到 Express 支援 Worker ，可能才有辦法真正提高性能了。
 
 > 或許有人會說：「寫 JavaScript
 > 嘛，還要啥~~自行車~~性能，而且我看現在寫的程式也沒多慢啊」<br>

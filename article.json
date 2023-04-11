@@ -73,5 +73,10 @@
     "name": "83% 性能提升！CSV 至 JSON 轉換工具（fast-csv-to-json）優化記錄",
     "date": "2023-04-04T22:44:00Z",
     "url": "Journey-of-Csv-to-Json-Optimization.md"
+  },
+  {
+    "name": "JavaScript Worker (NodeJS Worker Threads) 實作記錄",
+    "date": "2023-04-11T16:52:00Z",
+    "url": "Js-Worker.md"
   }
 ]
