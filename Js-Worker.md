@@ -29,17 +29,16 @@ CPU 核心有點事情幹
 > 內部實現導致的限制，如果有性能需求，我會建議換個語言或用 WebAssembly
 > 處理會比較方便。
 
-<blockquote class="twitter-tweet"><p lang="zh" dir="ltr">多核/多執行緒帶來的性能進步，需要軟體的配合才能體現出來<br><br>JS 寫後端，不要求性能的情況下很簡單<br>如果要求性能，那我真的覺得不如換個語言</p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1645635590719959041?ref_src=twsrc%5Etfw">April 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+> <blockquote class="twitter-tweet"><p lang="zh" dir="ltr">多核/多執行緒帶來的性能進步，需要軟體的配合才能體現出來<br><br>JS 寫後端，不要求性能的情況下很簡單<br>如果要求性能，那我真的覺得不如換個語言</p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1645635590719959041?ref_src=twsrc%5Etfw">April 11, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ## 背景知識補充
 
-Worker 怎麼實現的可以參考
+Worker 怎麼實現的，可以參考
 [MDN 的文件](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
 
 由於 NodeJS 沒有 `window` ，所以 NodeJS 改成利用 V8 Isolates ，建立不同的 V8
-Instance 將 Code 執行在不同線程
-
-> 想了解更多，可以參考[這篇文章](https://zhuanlan.zhihu.com/p/167920353)
+Instance 將 Code
+執行在不同線程，想了解更多，可以參考[這篇文章](https://zhuanlan.zhihu.com/p/167920353)
 
 至於使用上有什麼限制呢？有
 
@@ -52,7 +51,7 @@ Instance 將 Code 執行在不同線程
 
 > 我寫 WebAssembly 時都能傳輸
 > [JsValue](https://rustwasm.github.io/wasm-bindgen/api/wasm_bindgen/struct.JsValue.html)
-> 了，沒理由在 JS 的環境下限制比其他語言還多吧（？）
+> 了，在 JS 的環境下限制居然比其他語言還多（？）
 
 第三：一些 API 在 Worker 不能被取用，如果打算使用 Worker
 ，請參考[這篇文章](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API#worker_global_contexts_and_functions)確認可用的
@@ -60,9 +59,9 @@ API
 
 ## 實作 Worker
 
-### 開啓 Worker
-
 以下 Code 均為 TypeScript
+
+### 開啓 Worker
 
 首先，我們先 `import` NodeJS 的 worker_threads，並 `new` 一個新的 Worker 物件
 
@@ -75,7 +74,7 @@ const worker = new Worker("./src/worker.ts");
 
 ### 傳入資料
 
-如果需要傳輸資料到 Worker ，可以在主線程中透過以下程式達成
+如果需要傳輸資料到 Worker ，可以在主線程中透過以下程式達成：
 
 > 注意！只能用 `ArrayBuffer` 定義的記憶體空間，而且只能用
 > [Typed Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Typed_arrays)
@@ -89,7 +88,7 @@ worker.postMessage(array, [arrayBuffer]);
 
 > `2097152` 是我自己定義的，2MB 空間如果太大可以自己改數字
 
-如果需要從 Worker 傳輸資料回主線程，可以在 Workers 透過以下程式達成
+如果需要從 Worker 傳輸資料回主線程，可以在 Workers 透過以下程式達成：
 
 ```typescript
 import { parentPort } from "worker_threads";
@@ -129,7 +128,7 @@ worker.postMessage(array);
 我們將資料傳輸/共享出去後，可以在目標上掛上 `EventListener`
 來監聽有沒有訊息，有訊息的話就能拿到資料，並進行處理
 
-假設我們傳輸的資料都是 `Uint16Array` ，主線程可以寫成這樣
+假設我們傳輸的資料都是 `Uint16Array` ，主線程可以寫成這樣：
 
 ```typescript
 worker.on("message", (array: Uint16Array) => {
@@ -137,7 +136,7 @@ worker.on("message", (array: Uint16Array) => {
 });
 ```
 
-而在 Workers 則可以寫成這樣
+而在 Workers 則可以寫成這樣：
 
 ```typescript
 parentPort!.on("message", (array: Uint16Array) => {
@@ -215,7 +214,7 @@ parentPort!.on("message", (array: Uint16Array) => {
 哪天等到 Express 支援 Worker ，可能才有辦法真正提高性能了。
 
 > 或許有人會說：「寫 JavaScript
-> 嘛，還要啥~~自行車~~性能，而且我看現在寫的程式也沒多慢啊」
-> 對，現在看起來確實是這樣沒錯 但性能問題會隨著程式量的增加而愈發明顯
-> 等到不得不改的時候，面對成千上萬行的 code ，根本不知道要如何改起
+> 嘛，還要啥~~自行車~~性能，而且我看現在寫的程式也沒多慢啊」，
+> 對，現在看起來確實是這樣沒錯，但性能問題會隨著程式量的增加而愈發明顯，
+> 等到不得不改的時候，面對成千上萬行的 code ，根本不知道要如何改起，
 > 那為什麼不是寫的當下就把程式寫好呢？
