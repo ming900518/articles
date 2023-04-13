@@ -172,10 +172,11 @@ parentPort!.on("message", (array: Uint16Array) => {
 
    > 不用 `SharedArrayBuffer` ，因為我發現沒有鎖的情況下，資料太容易出錯了
 
-2. 將資料轉為 string，塞到 `Buffer` 去
+2. 將資料轉為 `string` ，塞到 `Buffer` 去，再塞進 `Uint16Array` 中
 
    ```typescript
    const buffer = Buffer.from(JSON.stringify(data));
+   array.set(buffer);
    ```
 
    > `Buffer` 會把內容都轉成能夠塞到 `Uint16Array` 的樣子
@@ -183,7 +184,7 @@ parentPort!.on("message", (array: Uint16Array) => {
    > 有些 object （如 `Map`）是無法被 `JSON.stringify()` 序列化成 JSON string
    > 的，那就要再自己想辦法轉換成能被序列化的物件了
 
-3. 把資料傳回主線程！
+3. 把資料傳回主線程
 
    ```typescript
    parentPort!.postMessage(array);
