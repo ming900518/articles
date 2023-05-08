@@ -7,8 +7,8 @@ rusty-sqlite3 是我這幾天寫的一個 Node-API Library ，把 Rust 中非常
 本文將說明我為什麼要做這個 Library ，以及我如何是如何實作這個 Library 的
 
 > rusty-sqlite3: A SQLite3 Client built with Rust Library SQLx and Neon.  
-> npm: https://www.npmjs.com/package/rusty-sqlite3  
-> GitHub: https://github.com/ming900518/rusty-sqlite3
+> npm: [https://www.npmjs.com/package/rusty-sqlite3](https://www.npmjs.com/package/rusty-sqlite3)  
+> GitHub: [https://github.com/ming900518/rusty-sqlite3](https://github.com/ming900518/rusty-sqlite3)
 
 ## 「為什麼不用 node-sqlite3 ？」
 
@@ -41,7 +41,7 @@ preparedStatement.all((err, result) => {
 
 我目前的解決辦法是多寫了一個 utility ，把 Callback 包裝成 Promise
 
-```typescript
+```javascript
 const database: Database = new sqlite3.Database("./database.sqlite");
 
 export const db = {
@@ -60,7 +60,7 @@ export const db = {
 
 接著再使用包裝後的 method
 
-```typescript
+```javascript
 match(await db.execute<SomeType>("select * from target_table where target_column = ?", ["value"]), {
     Ok: (result: SomeType[]) => {
         /* 成功的邏輯 */
@@ -141,7 +141,7 @@ let mut db = unsafe { Box::from_raw(connection) };
 
 <blockquote class="twitter-tweet"><p lang="zh" dir="ltr">好吧失敗了<br>SQLx 的 Tokio dependency 沒辦法包成 WASI</p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1651465971511721990?ref_src=twsrc%5Etfw">April 27, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-> 這一版的 Code: https://github.com/ming900518/rusty-sqlite3/commit/2e53a80394965a1d8e81ae070ecf3e95dd5b626d
+> WebAssembly 版的 Code: [https://github.com/ming900518/rusty-sqlite3/commit/2e53a80394965a1d8e81ae070ecf3e95dd5b626d](https://github.com/ming900518/rusty-sqlite3/commit/2e53a80394965a1d8e81ae070ecf3e95dd5b626d)
 
 ## Node-API - 比想像中簡單？！
 
