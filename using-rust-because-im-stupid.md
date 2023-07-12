@@ -6,7 +6,7 @@
 
 ## 我曾接觸過的語言
 
-除了 Python 之外，我並沒有受過任何正式的程式語言教育，我現在會寫的 Swift, Java, JavaScript / TypeScript 跟 Rust 都是我自學的，其中有真的用在工作上的語言有 Java, JS / JS 和 Rust
+除了 Python 之外，我並沒有受過任何正式的程式語言教育，我現在會寫的 Swift, Java, JavaScript / TypeScript 跟 Rust 都是我自學的，其中有真的用在工作上的語言有 Java, JS / TS 和 Rust
 
 > 這邊我要稍微說下，我不清楚現在的台灣教育有沒有改變，但在我從國小開始上資訊課到高中畢業的這幾年，我**從來沒有**在學校學習過任何程式語言！  
 > 大一時總算有碰到一點點......App Inventor  
