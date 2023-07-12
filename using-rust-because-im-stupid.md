@@ -71,7 +71,7 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 -   永遠無法瞬間得出目前的變數到底會被 deep copy 還是 shallow copy ，每天都在貓抓老鼠跟 trial and error：  
     寫這篇文章前我花了四天改了一個 JS 後端，只因為 32 行的某個變數突然失去了它的 field ，最後在不同的 method 發現有一行 code shallow copy 了原本的物件，改動到了原本的值。好笑的是，出錯的地方還不是我自己查到的，我拿去跟我部門三個 JS 工程師一起查才查出來。
 
--   `const` / `let` / `var` 跟即將到來的 `using` ：特別點名 `const` ，它並不等價於其他語言的 `const` 、 `let mut` ，它只確保變數不會被重新宣告或重新指定，並不確保裡面的 field 也不會被重新宣告或重新指定，遇到這坑的次數已經多到數不清了
+-   `const` / `let` / `var` 跟即將到來的 `using` ：特別點名 `const` ，它並不等價於其他語言的 `const` 跟 Rust 不加 `mut` 的 `let` ，它只確保變數不會被重新宣告或重新指定，並不確保裡面的 field 也不會被重新宣告或重新指定，遇到這坑的次數已經多到數不清了
 
 -   Node 知名 `Buffer instanceof Uint8Array` 但行為和 `Uint8Array` 不一致問題：
 
