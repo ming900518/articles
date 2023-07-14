@@ -141,9 +141,9 @@ Java 常用的萬惡之源 `null` ，到了 Rust 是 unsafe 的存在。這個�
 
 為什麼呢？
 
-## 我笨，但程式可不笨啊
+## 我笨，但編譯器可不笨啊
 
-我們來做個小實驗，先在 TypeScript 寫個 function 做 Hello world ，然後貼到 [Rust Playground](https://play.rust-lang.org/) ，直接按下 Build！
+我們來做個小實驗，先在 JavaScript 寫個 function 做 Hello world ，然後貼到 [Rust Playground](https://play.rust-lang.org/) ，直接按下 Build！
 
 ```rust
 function main() {
@@ -164,7 +164,9 @@ error: expected one of `!` or `::`, found `main`
 error: could not compile `playground` (lib) due to previous error
 ```
 
-我們可以很清楚的看到，Rustc 提供了非常有用的資訊！我們應該要使用 `fn` 而不是 `function` 去宣告一個函數。類似於這種的有效錯誤訊息，在其他語言真的非常少見，比如我們在 JS 中寫 Rust 的 Hello world
+我們可以很清楚的看到，Rust 編譯器提供了非常有用的資訊！我們應該要使用 `fn` 而不是 `function` 去宣告一個函數。
+
+類似於這種的有效錯誤訊息，在其他語言真的非常少見，比如我們在 JS 中寫 Rust 的 Hello world：
 
 ```javascript
 fn main() {
@@ -198,7 +200,7 @@ Rust 的編譯器跟 Clippy 提供了非常多有效的建議跟幫助，只要�
 ```rust
 fn main() {
     let val1 = vec![1, 2];
-    let _val2 = val1; //  加底線可避免 rustc 噴出未使用變數的警告
+    let _val2 = val1; // 此處加底線，是為了避免 rustc 噴出未使用變數的警告
     println!("{val1:?}");
 }
 ```
@@ -227,12 +229,196 @@ error: could not compile `playground` (bin "playground") due to previous error
 
 喔～原來物件已經被移動到 `val2` 了，而且編譯器推薦我如果性能影響可接受，可以考慮使用 `clone()`
 
-但這又是怎麼運作的呢，在 JavaScript 明明是可以用的啊，讓我們執行看看編譯器提示的 `rustc --explain E0382`
+但這又是怎麼運作的呢，在 JavaScript 明明是可以用的啊
 
-> 為了方便沒有安裝 Rust 的讀者，這邊附上[網頁版連結](https://doc.rust-lang.org/stable/error_codes/E0382.html)，其實在 Playground 裡也可以直接點錯誤代碼看到同一個頁面喔！
+```javascript
+const val1 = [1, 2];
+const val2 = val1;
 
-> Since MyStruct is a type that is not marked Copy, the data gets moved out of x when we set y. This is fundamental to Rust's ownership system: outside of workarounds like Rc, a value cannot be owned by more than one variable.
+console.log(val1);
+```
 
-> Sometimes we don't need to move the value. Using a reference, we can let another function borrow the value without changing its ownership. In the example below, we don't actually have to move our string to calculate_length, we can give it a reference to it with & instead.
+```
+$ node index.js
+[ 1, 2 ]
+```
 
-非常清楚明瞭的說明，這點在我學習 Rust 的時候，真的給了我非常大的幫助
+讓我們執行看看編譯器提示的 `rustc --explain E0382`
+
+> Since MyStruct is a type that is not marked Copy, the data gets moved out of x when we set y. This is fundamental to Rust's ownership system: outside of workarounds like Rc, a value cannot be owned by more than one variable.<br><br>Sometimes we don't need to move the value. Using a reference, we can let another function borrow the value without changing its ownership. In the example below, we don't actually have to move our string to calculate_length, we can give it a reference to it with & instead.
+
+> 這邊附上[網頁版連結](https://doc.rust-lang.org/stable/error_codes/E0382.html)，其實在 Playground 裡也可以直接點錯誤代碼看到同一個頁面喔！
+
+非常清楚明瞭的說明，這點在我學習 Rust 的時候，真的給了我非常大的幫助。
+
+另外，這個編譯器還能避免開發者出錯，比如上面的 JS 例子，稍微修改下就會開始崩壞了
+
+```javascript
+const val1 = [1, 2];
+const val2 = val1;
+
+/* 假設這邊有 50 行塞在中間 */
+
+val2.pop();
+
+/* 再假設這邊有 70 行塞在中間 */
+
+console.log(val1);
+```
+
+```
+$ node index.js
+[ 1 ]
+```
+
+「奇怪了，我的值到底為什麼被改了？？」接著就只能開始逐行檢查，這段時間根據邏輯的複雜性與寫程式的印象，會不斷的加長
+
+如果換成 Rust ，就是另一個故事了
+
+```rust
+fn main() {
+    let val1 = vec![1, 2];
+    let val2 = val1;
+
+    /* 假設這邊有 50 行塞在中間 */
+
+    val2.pop();
+
+    /* 再假設這邊有 70 行塞在中間 */
+
+    println!("{val1:?}");
+}
+```
+
+除了上面提過的 `move` 錯誤提示外，你還會收到這個東西：
+
+```
+   Compiling playground v0.0.1 (/playground)
+error[E0596]: cannot borrow `val2` as mutable, as it is not declared as mutable
+ --> src/main.rs:7:5
+  |
+7 |     val2.pop();
+  |     ^^^^^^^^^^ cannot borrow as mutable
+  |
+help: consider changing this to be mutable
+  |
+3 |     let mut val2 = val1;
+  |         +++
+```
+
+編譯器提示，需要我們將變數宣告為可變的變數，才能使用 `pop()` ，可變不可變，清楚明瞭，也不會突然就被改了導致需要重新 Review 自己的程式碼，因為**編譯器提供的保證，除非你主動退出（unsafe），否則一定有效，只要遵守編譯器的規則，就能避免很多的問題**
+
+如果想要做到和 JavaScript 相同的行為，我們需要這樣寫才行
+
+```rust
+fn main() {
+    let mut val1 = vec![1, 2];
+    let val2 = &mut val1;
+
+    /* 假設這邊有 50 行塞在中間 */
+
+    val2.pop();
+
+    /* 再假設這邊有 70 行塞在中間 */
+
+    println!("{val1:?}");
+}
+```
+
+```
+   Compiling playground v0.0.1 (/playground)
+    Finished dev [unoptimized + debuginfo] target(s) in 0.60s
+     Running `target/debug/playground`
+
+[1]
+```
+
+`val2` 需要被宣告為 `val1` 的可變引用（mutable reference），並且 `val1` 也必須利用 `mut` 宣告為可變才能這麼做，這使得開發者能清楚的明白自己所操作的是什麼，維護者維護時所需花費的腦力與時間也能大幅降低
+
+學習 Rust 甚至能學到一些新知識，比如由於 Rust 不像 JavaScript 幾乎所有使用場景都是單線程（沒人愛用 Workers 吧？？？），所以還會有很多特殊的規則是使用 JS 這種主要為單線程的語言所學不到的，比如下面這個例子：
+
+```javascript
+const globalVal = [];
+
+async function receiveFromExternalSource() {
+    const dataList = await externalSource();
+    dataList.forEach((data) => globalVal.push(data));
+}
+
+receiveFromExternalSource().then(() => console.log(globalVal));
+```
+
+這在 JavaScript 是完全合法的，你可能也不會發現任何問題，那如果換到 Rust 呢？
+
+```rust
+use tokio;
+
+static mut GLOBAL_VAL: Vec<String> = vec![];
+
+#[tokio::main]
+async fn main() {
+    receive_data_from_external_source().await;
+}
+
+async fn receive_data_from_external_source() {
+    let data_list = external_source().await;
+    data_list.into_iter().for_each(|data| GLOBAL_VAL.push(data));
+}
+```
+
+```
+   Compiling playground v0.0.1 (/playground)
+error[E0133]: use of mutable static is unsafe and requires unsafe function or block
+  --> src/main.rs:12:43
+   |
+12 |     data_list.into_iter().for_each(|data| GLOBAL_VAL.push(data));
+   |                                           ^^^^^^^^^^^^^^^^^^^^^ use of mutable static
+   |
+   = note: mutable statics can be mutated by multiple threads: aliasing violations or data races will cause undefined behavior
+
+For more information about this error, try `rustc --explain E0133`.
+error: could not compile `playground` (bin "playground") due to previous error
+```
+
+當時看到這個錯誤後，我才恍然大悟，原來做可變的 global variable 竟有可能造成問題！
+
+> 題外話，遇到這種問題，有兩種解法：<br> 第一種：利用「內部可變」物件將值包起來，就可以正常利用了，比如 `Mutex` 互斥鎖、 `RwLock` 讀寫鎖跟 Atomic
+>
+> ```rust
+> use tokio;
+> use std::sync::Mutex;
+>
+> static GLOBAL_VAL: Mutex<Vec<String>> = Mutex::new(vec![]);
+>
+> #[tokio::main]
+> async fn main() {
+>     receive_data_from_external_source().await;
+> }
+>
+> async fn receive_data_from_external_source() {
+>     let data_list = external_source().await;
+>     let mut locked_global_val = GLOBAL_VAL.lock().unwrap();
+>     data_list.into_iter().for_each(|data| locked_global_val.push(data));
+> }
+> ```
+>
+> <br>
+> 第二種：使用 unsafe ，這種做法相當於跟編譯器說「放心吧我知道這邊有問題，交給我自己處理」
+>
+> ```rust
+> use tokio;
+>
+> static mut GLOBAL_VAL: Vec<String> = vec![];
+>
+> #[tokio::main]
+> async fn main() {
+>     unsafe {
+>         receive_data_from_external_source().await;
+>     }
+> }
+>
+> async unsafe fn receive_data_from_external_source() {
+>     let data_list = external_source().await;
+>     data_list.into_iter().for_each(|data| GLOBAL_VAL.push(data));
+> }
+> ```
