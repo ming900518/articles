@@ -1,8 +1,14 @@
 # 我選擇寫 Rust ，因為我知道我自己並不聰明
 
-一年前，我的 GitHub 上還看不到 Rust Code ，目前 Rust Code 則佔了我自己寫的程式的 69.1 % ，現在的我已經可以很自豪的說我可以用 Rust 寫幾乎所有程式。
+一年前，我 commit 了我的第一行 Rust code ，目前 Rust Code 則佔了我自己寫的程式的 69.1 %
 
-分享自己寫程式的經驗，以及為什麼我選擇了 Rust ，可以給別人在選擇該不該學習某種語言時，一點不同於他人的觀點。
+現在的我已經可以很自豪的說我可以用 Rust 寫幾乎所有程式。
+
+這篇文章我會分享自己寫程式的經驗，以及為什麼我選擇了 Rust ，可以給別人在選擇該不該學習某種語言時，一點不同於他人的觀點。
+
+> **聲明：這篇文章只是「分享」而非「推坑文」**<br>  
+> 偏好這種東西因人而異，像 DHH 就喜歡沒 Type 的語言， ThePrimeagen 覺得沒 Type 很糟糕（我也是這派的）  
+> 我尊重所有人的選擇，各位也不要強迫別人去學習某種語言或某種開發習慣喔～
 
 ## 我曾接觸過的語言
 
@@ -111,6 +117,122 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 還有需要解釋嗎？[所有的錯都是 Java 害的，真就萬惡之源啊](https://twitter.com/BrendanEich/status/1271998084642246657?s=20)
 
-**以上的一切，其實都可以歸咎於「skill issue」，但我只是想寫個程式，真的有需要自己考慮這麼多？**
-
 ## 我的 Rust 初體驗
+
+我在一年前的差不多這個時候開始寫 Rust ，會對它感興趣，主要是因為我實在受夠以上這些 Bullshit 了，做了兩年多的維護，只覺得天天都在吃屎、天天都在重複之前的錯誤。 Rust 的官網清楚的寫道 "Performance, Reliability, Productivity" ，這深深的打動了我。
+
+後來發現我日常使用的 M1 MacBook Air 所搭載的 [Apple Silicon Linux GPU Driver 也是用 Rust 寫的](https://asahilinux.org/2022/11/tales-of-the-m1-gpu/)，想著既然 GPU Driver 都能用這語言寫了，想必是真的有效？抱著懷疑的態度，我開始了我的第一個 Rust 專案：用當時最有名的後端庫 Actix Web 和 Diesel ORM 寫個後端。
+
+當時的我在開發上遇到了一些問題：
+
+### IDE 支援較不友好
+
+由於我從 Java 轉向 Rust ，當時我用的 IDE 是 IntelliJ IDEA ，Rust Plugin 很大程度的幫助了我進行程式的開發，但......實在是太慢了。而且當時的 IDEA 預設不會進行 macro 的分析，導致一堆 macro 使用起來體驗非常差
+
+後來被 ThePrimeagen 推坑 Neovim ，用原生的 rust-analyzer 後體驗就好不少了
+
+### 我的 `null` 呢？ `try catch` 呢？？
+
+Java 常用的萬惡之源 `null` ，到了 Rust 是 unsafe 的存在。這個觀念讓我痛苦了很久，因為寫了兩年 Java 的我已經變成 `null` 的形狀了啊（大霧），當然在體會到 `Option<T>` 的好之後，反而讓我後來在 Java 也改用 `Optional<T>` 了
+
+至於 `try catch` 轉向 `Result<T, E>` ，對於我而言反而好改，因為我在前公司根本就沒養成要做錯誤處理的習慣......，用上 `Result<T, E>` 後，才知道原先的做法有可能會出錯
+
+但除了這幾個問題之外，就沒啥感覺了
+
+為什麼呢？
+
+## 我笨，但程式可不笨啊
+
+我們來做個小實驗，先在 TypeScript 寫個 function 做 Hello world ，然後貼到 [Rust Playground](https://play.rust-lang.org/) ，直接按下 Build！
+
+```rust
+function main() {
+    console.log("Hello world!");
+}
+```
+
+```
+   Compiling playground v0.0.1 (/playground)
+error: expected one of `!` or `::`, found `main`
+ --> src/lib.rs:1:10
+  |
+1 | function main() {
+  | -------- ^^^^ expected one of `!` or `::`
+  | |
+  | help: write `fn` instead of `function` to declare a function
+
+error: could not compile `playground` (lib) due to previous error
+```
+
+我們可以很清楚的看到，Rustc 提供了非常有用的資訊！我們應該要使用 `fn` 而不是 `function` 去宣告一個函數。類似於這種的有效錯誤訊息，在其他語言真的非常少見，比如我們在 JS 中寫 Rust 的 Hello world
+
+```javascript
+fn main() {
+    println!("Hello world!");
+}
+
+main() // JS 沒有 main function ，需要主動呼叫
+```
+
+```
+fn main() {
+   ^^^^
+
+SyntaxError: Unexpected identifier 'main'
+    at internalCompileFunction (node:internal/vm:73:18)
+    at wrapSafe (node:internal/modules/cjs/loader:1177:20)
+    at Module._compile (node:internal/modules/cjs/loader:1221:27)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1311:10)
+    at Module.load (node:internal/modules/cjs/loader:1115:32)
+    at Module._load (node:internal/modules/cjs/loader:962:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:83:12)
+    at node:internal/main/run_main_module:23:47
+
+Node.js v20.3.1
+```
+
+看了跟沒看一樣，我還是不知道要改什麼啊
+
+Rust 的編譯器跟 Clippy 提供了非常多有效的建議跟幫助，只要習慣看錯誤提示，甚至可以單靠錯誤提示進行語言的學習，這是跟其他語言不同的，比如第一次寫 Rust 一定會碰到的 borrow checker：
+
+```rust
+fn main() {
+    let val1 = vec![1, 2];
+    let _val2 = val1; //  加底線可避免 rustc 噴出未使用變數的警告
+    println!("{val1:?}");
+}
+```
+
+```
+   Compiling playground v0.0.1 (/playground)
+error[E0382]: borrow of moved value: `val1`
+ --> src/main.rs:4:15
+  |
+2 |     let val1 = vec![1, 2];
+  |         ---- move occurs because `val1` has type `Vec<i32>`, which does not implement the `Copy` trait
+3 |     let _val2 = val1;
+  |                 ---- value moved here
+4 |     println!("{val1:?}");
+  |               ^^^^^^^^ value borrowed here after move
+  |
+  = note: this error originates in the macro `$crate::format_args_nl` which comes from the expansion of the macro `println` (in Nightly builds, run with -Z macro-backtrace for more info)
+help: consider cloning the value if the performance cost is acceptable
+  |
+3 |     let _val2 = val1.clone();
+  |                     ++++++++
+
+For more information about this error, try `rustc --explain E0382`.
+error: could not compile `playground` (bin "playground") due to previous error
+```
+
+喔～原來物件已經被移動到 `val2` 了，而且編譯器推薦我如果性能影響可接受，可以考慮使用 `clone()`
+
+但這又是怎麼運作的呢，在 JavaScript 明明是可以用的啊，讓我們執行看看編譯器提示的 `rustc --explain E0382`
+
+> 為了方便沒有安裝 Rust 的讀者，這邊附上[網頁版連結](https://doc.rust-lang.org/stable/error_codes/E0382.html)，其實在 Playground 裡也可以直接點錯誤代碼看到同一個頁面喔！
+
+> Since MyStruct is a type that is not marked Copy, the data gets moved out of x when we set y. This is fundamental to Rust's ownership system: outside of workarounds like Rc, a value cannot be owned by more than one variable.
+
+> Sometimes we don't need to move the value. Using a reference, we can let another function borrow the value without changing its ownership. In the example below, we don't actually have to move our string to calculate_length, we can give it a reference to it with & instead.
+
+非常清楚明瞭的說明，這點在我學習 Rust 的時候，真的給了我非常大的幫助
