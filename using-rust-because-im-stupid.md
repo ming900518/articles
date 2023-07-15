@@ -419,7 +419,7 @@ error: could not compile `playground` (bin "playground") due to previous error
 1. 預設所有變數都必須進行初始化，避免使用到未初始化的物件
     > `std::mem::MaybeUninit` 是例外，通常只有在要使用 FFI 的時候才會使用，且取用它是 unsafe 的
 2. 利用 `Option<T>` enum 作為可能為空的物件表示，且開發者必須進行 pattern matching 才能取用裡面的值，有效避免 `NullPointerException`
-    > `std::ptr::null` 可以建立 raw pointer ，不過在 Rust 中 [A null pointer is never valid, not even for accesses of size zero.](https://doc.rust-lang.org/std/ptr/index.html)
+    > `std::ptr::null` 可以建立 null raw pointer ，不過在 Rust 中 [A null pointer is never valid, not even for accesses of size zero.](https://doc.rust-lang.org/std/ptr/index.html)
 3. 利用 `Result<T, E>` 進行錯誤處理，且因為 Rust 的強型別特性，使所有錯誤均會被提示進行處理，再也不需要通靈或 trial and error 了
 4. 語法減少許多冗文贅字
 
