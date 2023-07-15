@@ -6,7 +6,7 @@
 
 這篇文章我會分享自己寫程式的經驗，以及為什麼我選擇了 Rust ，可以給別人在選擇該不該學習某種語言時，一點不同於他人的觀點。
 
-> **聲明：這篇文章只是「分享」而非「推坑文」**<br>  
+> **聲明：這篇文章只是「分享」而非「推坑文」** <br>  
 > 偏好這種東西因人而異，像 DHH 就喜歡沒 Type 的語言， ThePrimeagen 覺得沒 Type 很糟糕（我也是這派的）  
 > 我尊重所有人的選擇，各位也不要強迫別人去學習某種語言或某種開發習慣喔～
 
@@ -29,18 +29,18 @@
 
 但 Java 也有令人討厭的地方
 
-#### 1. 惡名昭彰的 `NullPointerException`
+#### 一、惡名昭彰的 `NullPointerException`
 
 Java 的 `null` 可以出現在任何非 primitive value 上， **包含為了解決這問題的 `Optional<T>` ！** 這絕對是所有 Java 工程師的噩夢，我曾為了一支 API 瘋狂 `NullPointerException` 熬夜看了一整晚的程式碼，最後索性在每個有可能 `null` 的物件都換上 `Optional<T>`，但這問題還是沒有解決，因為其中一個 `Optional<T>` 隔天就 NPE 了......
 
-#### 2. 程式語言的「贅字」實在是太多了
+#### 二、程式語言的「贅字」實在是太多了
 
 嘿 Java 工程師們，你們的 `main()` 怎麼寫啊？
 
 蛤什麼？你說你都直接用 Code Snippet ？那如果突然要你在只有 JDK 的環境下用記事本寫個小程式呢？  
 不要覺得這事不會出現，因為我就遇過，體驗十分糟糕（（
 
-#### 3. 使用者年齡老化嚴重，語言更新無法帶動使用者更新
+#### 三、使用者年齡老化嚴重，語言更新無法帶動使用者更新
 
 其實我覺得這點不能完全怪在 Java 身上，畢竟老語言了。但問題是很多前輩很固執啊
 
@@ -60,7 +60,7 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 主要有以下幾點
 
-#### 1. 語法與行為繁雜混亂
+#### 一、語法與行為繁雜混亂
 
 -   方法用到的變數會被 deep copy 還是 shallow copy 行為不明顯，每天都在貓抓老鼠跟 trial and error：  
     寫這篇文章前我花了四天改了一個 JS 後端，只因為 32 行的某個變數突然失去了它的 field ，最後在不同的 method 發現有一行 code shallow copy 了原本的物件，改動到了原本的值。好笑的是，出錯的地方還不是我自己查到的，我拿去跟我部門三個 JS 工程師一起查才查出來。
@@ -70,7 +70,7 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 -   非同步操作有 Callback 、 `Promise` 跟 `async await` 三種用法：  
     這個在使用 Library 時尤其噁心，為了在使用 `sqlite3` 時也能統一使用 `Promise` ，整個套件被我重新包裝過，最後更是直接用 Rust 寫了個 `rusty-sqlite3` ，從 Library 層面就改用 `Promise`
 
-#### 2. 錯誤處理困難
+#### 二、錯誤處理困難
 
 寫這篇文章的幾天前，知名 TypeScript Wizard （雖然我不怎麼喜歡 TS ，但還是會去學習下用法的）分享了 [TypeScript 拒絕 Typed Error GitHub Issue 的 TL;DR](https://twitter.com/mattpocockuk/status/1677788449368047617)
 
@@ -80,7 +80,7 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 在其他強型別語言， Error 通常都會繼承自代表錯誤或例外的 Interface / Trait ，並在文件中或型別上提供足夠的資訊供 Binary 用戶或 Library 使用者進行錯誤處理。 JavaScript 系列就沒這回事了，雖然也有 [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) Object，但一堆 Library 根本就沒有定義他到底會 throw 啥東西出來，不清楚情況的人就只能繼續亂 catch 一通，想要好好做處理的人也只能 trial and error 或直接去翻 Library 的原始碼，這導致要在 JS 下寫穩定程式的難度比起其他程式語言更難。
 
-#### 3. `undefined`
+#### 三、 `undefined`
 
 還有需要解釋嗎？[所有的錯都是 Java 害的，真就萬惡之源啊](https://twitter.com/BrendanEich/status/1271998084642246657?s=20)
 
@@ -90,19 +90,19 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 我在一年前的差不多這個時候開始寫 Rust ，會對它感興趣，主要是因為我實在受夠以上這些 Bullshit 了，做了兩年多的維護，只覺得天天都在吃屎、天天都在重複之前的錯誤。 Rust 的官網清楚的寫道 "Performance, Reliability, Productivity" ，這深深的打動了我。
 
-後來發現我日常使用的 M1 MacBook Air 所搭載的 [Apple Silicon Linux GPU Driver 也是用 Rust 寫的](https://asahilinux.org/2022/11/tales-of-the-m1-gpu/)，想著既然 GPU Driver 都能用這語言寫了，想必是真的有效？抱著懷疑的態度，我開始了我的第一個 Rust 專案：用當時最有名的後端庫 Actix Web 和 Diesel ORM 寫個後端。
+後來發現我日常使用的 M1 MacBook Air 所搭載的 [Apple Silicon Linux GPU Driver 也是用 Rust 寫的](https://asahilinux.org/2022/11/tales-of-the-m1-gpu/)，想著既然 GPU Driver 都能用這語言寫了，想必是真的有效？抱著懷疑的態度，我開始了我的第一個 Rust 專案。
 
 當時的我在開發上遇到了一些問題：
 
-#### 1. IDE 支援較不友好
+#### 一、開發體驗仍待加強
 
 由於我從 Java 轉向 Rust ，當時我用的 IDE 是 IntelliJ IDEA ，Rust Plugin 很大程度的幫助了我進行程式的開發，但......實在是太慢了。而且當時的 IDEA 預設不會進行 macro 的分析，導致一堆 macro 使用起來體驗非常差
 
-後來被 ThePrimeagen 的影片推坑 Neovim ，改用原生的 rust-analyzer 體驗就好不少了
+後來[被 ThePrimeagen 的影片推坑 Neovim](https://www.youtube.com/watch?v=w7i4amO_zaE) ，改用原生的 rust-analyzer 體驗就好不少了，不過有時開啓大型專案時依然會出現卡頓的問題，只能等待 Rust Team 持續優化了
 
 #### 2. 語法需要熟悉
 
-雖然 Rust 選擇了許多語法我個人認為跟 TypeScript 很像，但許多概念依然跟其他語言有所不同，甚至因為設計理念的關係，會需要重新學習不一樣的做法
+雖然 Rust 許多語法我個人認為跟 TypeScript 很像，但許多概念依然跟其他語言有所不同，甚至因為設計理念的關係，會需要重新學習不一樣的做法
 
 Java 常用的萬惡之源 `null` ，到了 Rust 是 unsafe 的存在。這個觀念讓我痛苦了很久，因為寫了兩年 Java 的我已經變成 `null` 的形狀了啊（大霧），當然在體會到 `Option<T>` 的好之後，反而讓我後來在 Java 也改用 `Optional<T>` 了
 
@@ -110,7 +110,7 @@ Java 常用的萬惡之源 `null` ，到了 Rust 是 unsafe 的存在。這個�
 
 不過學習曲線這件事，個人覺得不必太過擔心，而且學了絕對是利大於弊，因為......
 
-## 我笨，但 Rust 的編譯器可不笨
+## Rust 的保姆級編程體驗
 
 我們來做個小實驗，先在 JavaScript 寫個 function 做 Hello world ，然後貼到 [Rust Playground](https://play.rust-lang.org/) ，直接按下 Build！
 
@@ -198,7 +198,7 @@ error: could not compile `playground` (bin "playground") due to previous error
 
 喔～原來物件已經被移動到 `val2` 了，而且編譯器推薦我如果性能影響可接受，可以考慮使用 `clone()`
 
-但這又是怎麼運作的呢，在 JavaScript 明明是可以用的啊
+但這又是怎麼運作的呢，在 JavaScript 明明是可以用的啊：
 
 ```javascript
 const val1 = [1, 2];
@@ -218,7 +218,7 @@ $ node index.js
 
 > 這邊附上[網頁版連結](https://doc.rust-lang.org/stable/error_codes/E0382.html)，其實在 Playground 裡也可以直接點錯誤代碼看到同一個頁面喔！
 
-清楚明瞭的說明在我學習 Rust 的時候，給了我非常大的幫助。
+原來在 Rust 的所有權機制中，除了被標記為 Copy 的型別跟 Rc 等例外，物件的資料會被移動到另一個物件啊！諸如此類清楚明瞭的說明在我學習 Rust 的時候，給了我非常大的幫助。
 
 另外，這個編譯器還能避免開發者出錯，比如上面的 JS 例子，稍微修改下就會開始崩壞了：
 
@@ -240,7 +240,7 @@ $ node index.js
 [ 1 ]
 ```
 
-「奇怪了，我的值到底為什麼被改了？？」為了讓程式正常工作，身為工程師的我就只能開始逐行檢查。這段過程所需花費的時間與難度，會根據邏輯的複雜性與對於程式原始碼的熟悉度而逐漸增加。
+「奇怪了，我的值到底為什麼被改了？？」為了讓程式正常工作，身為工程師的我就只能開始逐行檢查。這段過程所需花費的時間與難度，會根據邏輯的複雜性提高，與對於程式原始碼的熟悉度隨著時間下降，而逐漸增加。
 
 如果換成 Rust 呢？
 
@@ -393,7 +393,9 @@ error: could not compile `playground` (bin "playground") due to previous error
 > }
 > ```
 
-我常認為**編譯器應該是開發者的好友，而不是開發者的敵人**， rustc 跟 rust-analyzer 提供的幫助讓初學這門語言的門檻大幅降低，同時也讓寫出來的程式更為安全
+以上這些只是 Rust 編譯器功能的一小部分，礙於篇幅，這邊基本不可能完整展示全部的功能。所以這邊提供 [Rust error codes index](https://doc.rust-lang.org/error_codes/error-index.html) 和 [Clippy Lints](https://rust-lang.github.io/rust-clippy/master/index.html) 的連結，感興趣的話可以點進去查看上千個 rustc 和 cargo clippy 規則
+
+我將 Rust 編譯器視為我的好友，在我開發 Rust 程式時監督我寫出安全的程式，並在我犯錯時提醒並教我如何處理，使我受益良多，這是我在其他語言都未曾見過的。
 
 ## 接受自己並不如想像的如此聰明，至少，沒有電腦聰明
 
@@ -402,17 +404,21 @@ error: could not compile `playground` (bin "playground") due to previous error
 1. 如果程式寫的好，用什麼語言寫都能很快很安全
 2. 只要我自己記得，這邊的邏輯可以用 _某種寫法_ 寫，反正之後再做檢查就好
 
-我曾一度接受這種說法，甚至自己發表過這種言論，但現在我卻認為這些說法都是極其不負責任的。因為**人類會犯錯，人不能確保自己永遠都是正確的**。
+我曾一度接受這種說法，甚至自己發表過這種言論，但現在我卻認為這些說法都是極其不負責任的。因為**人類會犯錯，人無法確保自己永遠都是正確的**。
 
-程式則不一樣，只要在正常的硬體中執行正確的邏輯，它們運行的效率與精準度絕對比人類還高。我認識到了這點，也最終接受了這個事實。因為在離開前公司前，我一直都在為了不承認這點，而不斷付出名為「除錯」的代價，這邊「除錯」的對象往往不是需要人工處理的業務邏輯錯誤，而是空指針引用、使用未初始化的物件與錯誤的改變不應改變的值等低級錯誤，**這些錯誤完全都可以透過良好的語言設計，與智能的編譯器，在編譯時就抓出問題！**
+程式則不一樣，只要在正常的硬體中執行正確的邏輯，它們運行的效率與精準度絕對比人類還高。我認識到了這點，也最終接受了這個事實。
+
+因為在寫程式的這幾年，我一直都在不斷付出名為「除錯」的代價，這邊「除錯」的對象往往不是需要人工處理的業務邏輯錯誤，而是「空指針引用」、「使用未初始化的物件」與「錯誤的改變不應改變的值」等低級錯誤，**這些錯誤完全都可以透過良好的語言設計，與智能的編譯器，在編譯時就抓出問題！**
 
 從 rustc 、 cargo clippy 到 Miri ， Rust 生態的各種輔助工具不僅僅只是將程式編譯出來執行，它們協助我不犯下愚蠢的錯誤，幫助我產出更優秀穩定的程式，並可以把寶貴的時間，完全用在業務邏輯的除錯與優化。
 
-在本文第一章提到的各種其他語言的問題，在 Rust 的實現中也有改進的嘗試：
+在本文第一章提到的各種其他語言的問題，在 Rust 的實現中可以發現許多改進的嘗試：
 
-1. 預設所有變數都必須進行初始化，避免 `undefined`
-2. 利用 `Option<T>` 進行空值判斷，避免 `NullPointerException` 且提醒開發者必須處理
-3. 利用 `Result<T, E>` 進行錯誤處理，且強型別特性，使錯誤均會被提示進行處理，再也不需要通靈或 trial and roor 了
+1. 預設所有變數都必須進行初始化，避免使用到未初始化的物件
+    > `std::mem::MaybeUninit` 是例外，通常只有在要使用 FFI 的時候才會使用，且取用它是 unsafe 的
+2. 利用 `Option<T>` enum 作為可能為空的物件表示，且開發者必須進行 pattern matching 才能取用裡面的值，有效避免 `NullPointerException`
+    > `std::ptr::null` 可以建立 raw pointer ，不過在 Rust 中 [A null pointer is never valid, not even for accesses of size zero.](https://doc.rust-lang.org/std/ptr/index.html)
+3. 利用 `Result<T, E>` 進行錯誤處理，且因為 Rust 的強型別特性，使所有錯誤均會被提示進行處理，再也不需要通靈或 trial and error 了
 4. 語法減少許多冗文贅字
 
 這就是我為何選擇使用 Rust ，而我也會繼續使用它：只需付出比其他程式語言稍長的開發時間，便能揚長避短，何樂而不為呢？
