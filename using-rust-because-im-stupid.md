@@ -1,6 +1,8 @@
 # 我選擇寫 Rust ，因為我知道我自己並不聰明
 
-一年前，我 commit 了我的第一行 Rust code ，目前 Rust Code 則佔了我自己寫的程式的 69.1 %
+一年前，我 commit 了我的第一行 Rust code ，截至 2023/5/20 ， Rust Code 則佔了我自己寫的程式的 73.28 %（現在應該佔比更高）
+
+<blockquote class="twitter-tweet"><p lang="zh" dir="ltr">把 Fork 來的專案跟標籤語言們拿掉之後......天啊我都不知道我寫了這麼多 Rust <a href="https://t.co/Sokp0rPlTv">pic.twitter.com/Sokp0rPlTv</a></p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1659920104065474561?ref_src=twsrc%5Etfw">May 20, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
 
 現在的我已經可以很自豪的說我可以用 Rust 寫幾乎所有程式。
 
