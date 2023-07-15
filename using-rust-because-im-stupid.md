@@ -12,7 +12,7 @@
 
 ## 我曾接觸過的語言
 
-除了 Python 之外，我並沒有受過任何正式的程式語言教育，我現在會寫的 Swift, Java, JavaScript / TypeScript 跟 Rust 都是我自學的，其中有真的用在工作上的語言有 Java, JS / TS 和 Rust
+除了 Python 之外，我並沒有受過任何正式的程式語言教育，我現在常寫的語言都是我自學的，其中有真的用在工作上的語言有 Java, JS / TS 和 Rust
 
 > 這邊我要稍微說下，我不清楚現在的台灣教育有沒有改變，但在我從國小開始上資訊課到高中畢業的這幾年，我**從來沒有**在學校學習過任何程式語言！  
 > 大一時總算有碰到一點點......App Inventor  
@@ -23,9 +23,7 @@
 
 ### Java
 
-它算是我第一個正式用於養活自己的語言，我應徵我的第一份工作時，原本打算寫前端，但過沒多久我就對後端產生強烈興趣，於是跟上司討論後，成功的在新的案子中加入後端開發的行列。
-
-在我寫 Java 的兩年間，我成功的將一堆比我還老、沒人維護的依賴更換成有人維護的依賴、將 Java 8 換到 Java 11 再換到 Java 17 、將 Spring 換成 Spring Boot ，這一切都是我利用我的個人時間看技術文章、看書、看演講和自己測試出來的。學習使用 Java 的同時，我感受到了這個語言的特性： Java 對於「物件」與「型別」的執著達到了我從未體會過的強度，帶來的是我就算不開 IDE ，純看程式也能了解我正在處理什麼型別的物件，就程式碼本身的解釋力而言，我個人覺得非常優秀。
+它算是我第一個正式用於養活自己的語言，在我寫 Java 的兩年間，我成功的將一堆比我還老、沒人維護的依賴更換成有人維護的依賴、將 Java 8 換到 Java 11 再換到 Java 17 、將 Spring 換成 Spring Boot ，這一切都是我利用我的個人時間看技術文章、看書、看演講和自己測試出來的。學習使用 Java 的同時，我感受到了這個語言的特性： Java 對於「物件」與「型別」的執著達到了我從未體會過的強度，帶來的是我就算不開 IDE ，純看程式也能了解我正在處理什麼型別的物件，就業務邏輯本身的解釋力而言，我個人覺得非常優秀。
 
 看文件的習慣也是從 Java 學到的，大一點的框架與依賴都會提供 JavaDoc ，我經由閱讀文件學習到別人是如何設計 Library 的，也期許自己在寫程式時也要留下足夠的文件，讓他人可以更容易的了解程式的邏輯與實現。
 
@@ -33,7 +31,7 @@
 
 #### 1. 惡名昭彰的 `NullPointerException`
 
-Java 的 `null` 可以出現在任何非 primitive value 上，**包含為了解決這問題的 `Optional<T>` ！**這絕對是所有 Java 工程師的噩夢，我曾為了一支 API 瘋狂 `NullPointerException` 熬夜看了一整晚的程式碼，最後索性在每個有可能 `null` 的物件都換上 `Optional<T>`，但這問題還是沒有解決，因為其中一個 `Optional<T>` 隔天就 NPE 了......
+Java 的 `null` 可以出現在任何非 primitive value 上， **包含為了解決這問題的 `Optional<T>` ！** 這絕對是所有 Java 工程師的噩夢，我曾為了一支 API 瘋狂 `NullPointerException` 熬夜看了一整晚的程式碼，最後索性在每個有可能 `null` 的物件都換上 `Optional<T>`，但這問題還是沒有解決，因為其中一個 `Optional<T>` 隔天就 NPE 了......
 
 #### 2. 程式語言的「贅字」實在是太多了
 
@@ -44,7 +42,7 @@ Java 的 `null` 可以出現在任何非 primitive value 上，**包含為了解
 
 #### 3. 使用者年齡老化嚴重，語言更新無法帶動使用者更新
 
-其實我覺得這點不能完全怪在 Java 身上，畢竟老同志了。但問題是很多老前輩很固執啊
+其實我覺得這點不能完全怪在 Java 身上，畢竟老語言了。但問題是很多前輩很固執啊
 
 Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 2022 年，我前僱主跟當時大三的我說新專案要用哪版的 JDK 開？
 
@@ -52,13 +50,9 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 不是說舊版 JDK 不能用，但一堆新語言特性沒辦法用，到後期我甚至得專門去找 for JDK 8 的依賴才能實現某些功能，反而無意義的增加了開發的困擾。
 
-> 有人會說更新可能會有不預期的情況發生，怎麼會是「無意義」呢？  
-> 我認為有因才有果，要先清楚的認識到「是什麼造成了 Bug 發生？」。程式語言為了支援利用舊版語言的程式能夠繼續編譯 / 執行，會盡量避免 Breaking Change 的發生，如果升級到沒有 Breaking Changes 的新版後出現問題，絕大部分都是引用的套件導致的，這時要檢討的應該是套件，而不是語言  
-> 如果真的出現語言層級的問題，那大概就是語言設計的問題了
-
 ### JavaScript / TypeScript
 
-我的第一份工作與現在的工作都有用到 JavaScript ，但我其實先用了 TypeScript ，因為 Angular 開專案後似乎就會直接帶 TypeScript 了，這兩個語言（或者說一個語言跟一個語言補強工具？ Linter ？）在前端幾乎就是獨佔市場，不用也不行
+我的第一份工作與現在的工作都有用到 JavaScript 跟 TypeScript ，這兩個語言（或者說一個語言跟一個語言補強工具？ Linter ？）在前端幾乎就是獨佔市場，不用也不行
 
 > 我知道啦，現在可以寫 WebAssembly ，你現在看到的 Blog 就是我用 WebAssembly 寫出來的。但現在 WebAssembly 還是會需要 JS Glue Code 啊，沒辦法 100% 擺脫 JS 的魔掌
 
@@ -68,46 +62,17 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 #### 1. 語法與行為繁雜混亂
 
+-   方法用到的變數會被 deep copy 還是 shallow copy 行為不明顯，每天都在貓抓老鼠跟 trial and error：  
+    寫這篇文章前我花了四天改了一個 JS 後端，只因為 32 行的某個變數突然失去了它的 field ，最後在不同的 method 發現有一行 code shallow copy 了原本的物件，改動到了原本的值。好笑的是，出錯的地方還不是我自己查到的，我拿去跟我部門三個 JS 工程師一起查才查出來。
+
+-   `const` / `let` / `var` 跟即將到來的 `using` ：真的是太多了，增加學習難度之外，這邊我還要特別點名 `const` ，它並不等價於其他語言的 `const` 跟 Rust 不加 `mut` 的 `let` ，它只確保變數不會被重新宣告或重新指定，並不確保裡面的 field 也不會被重新宣告或重新指定，遇到這坑的次數已經多到數不清了
+
 -   非同步操作有 Callback 、 `Promise` 跟 `async await` 三種用法：  
     這個在使用 Library 時尤其噁心，為了在使用 `sqlite3` 時也能統一使用 `Promise` ，整個套件被我重新包裝過，最後更是直接用 Rust 寫了個 `rusty-sqlite3` ，從 Library 層面就改用 `Promise`
 
--   function 除了一般的 function 宣告之外還有 arrow function ：  
-    arrow function 用於 function 中作為流程的一部分使用，我覺得完全沒有問題，但問題是我已經看過不少次整份 .ts 檔案沒有半行 function ，全是 `const` 開頭的程式了，閱讀起來超級噁心
-
--   永遠無法瞬間得出目前的變數到底會被 deep copy 還是 shallow copy ，每天都在貓抓老鼠跟 trial and error：  
-    寫這篇文章前我花了四天改了一個 JS 後端，只因為 32 行的某個變數突然失去了它的 field ，最後在不同的 method 發現有一行 code shallow copy 了原本的物件，改動到了原本的值。好笑的是，出錯的地方還不是我自己查到的，我拿去跟我部門三個 JS 工程師一起查才查出來。
-
--   `const` / `let` / `var` 跟即將到來的 `using` ：特別點名 `const` ，它並不等價於其他語言的 `const` 跟 Rust 不加 `mut` 的 `let` ，它只確保變數不會被重新宣告或重新指定，並不確保裡面的 field 也不會被重新宣告或重新指定，遇到這坑的次數已經多到數不清了
-
--   Node 知名 `Buffer instanceof Uint8Array` 但行為和 `Uint8Array` 不一致問題：
-
-    ```
-    Welcome to Node.js v20.3.1.
-    Type ".help" for more information.
-    > const nodeBuffer = Buffer.from([1, 2, 3]);
-    undefined
-    > const uint8Array = new Uint8Array([1, 2 ,3]);
-    undefined
-    > const slicedBuffer = nodeBuffer.slice(1);
-    undefined
-    > const slicedArray = uint8Array.slice(1);
-    undefined
-    > slicedBuffer[0]++;
-    2
-    > slicedArray[0]++;
-    2
-    > console.log(nodeBuffer, nodeBuffer instanceof Uint8Array);
-    <Buffer 01 03 03> true
-    undefined
-    > console.log(uint8Array, uint8Array instanceof Uint8Array);
-    Uint8Array(3) [ 1, 2, 3 ] true
-    undefined
-    >
-    ```
-
 #### 2. 錯誤處理困難
 
-寫這篇文章的幾天前，知名 TypeScript Wizard （雖然我不怎麼喜歡 TS ，但還是會去學習下用法的）分享了 TypeScript 拒絕 Typed Error GitHub Issue 的 TL;DR ：https://twitter.com/mattpocockuk/status/1677788449368047617
+寫這篇文章的幾天前，知名 TypeScript Wizard （雖然我不怎麼喜歡 TS ，但還是會去學習下用法的）分享了 [TypeScript 拒絕 Typed Error GitHub Issue 的 TL;DR](https://twitter.com/mattpocockuk/status/1677788449368047617)
 
 其中有一點我覺得很有趣："In JS there's no culture of libraries declaring what errors they throw"
 
@@ -117,7 +82,7 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 還有需要解釋嗎？[所有的錯都是 Java 害的，真就萬惡之源啊](https://twitter.com/BrendanEich/status/1271998084642246657?s=20)
 
-## 我的 Rust 初體驗
+### Rust
 
 我在一年前的差不多這個時候開始寫 Rust ，會對它感興趣，主要是因為我實在受夠以上這些 Bullshit 了，做了兩年多的維護，只覺得天天都在吃屎、天天都在重複之前的錯誤。 Rust 的官網清楚的寫道 "Performance, Reliability, Productivity" ，這深深的打動了我。
 
@@ -125,23 +90,23 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 當時的我在開發上遇到了一些問題：
 
-### IDE 支援較不友好
+#### 1. IDE 支援較不友好
 
 由於我從 Java 轉向 Rust ，當時我用的 IDE 是 IntelliJ IDEA ，Rust Plugin 很大程度的幫助了我進行程式的開發，但......實在是太慢了。而且當時的 IDEA 預設不會進行 macro 的分析，導致一堆 macro 使用起來體驗非常差
 
-後來被 ThePrimeagen 推坑 Neovim ，用原生的 rust-analyzer 後體驗就好不少了
+後來被 ThePrimeagen 的影片推坑 Neovim ，改用原生的 rust-analyzer 體驗就好不少了
 
-### 我的 `null` 呢？ `try catch` 呢？？
+#### 2. 語法需要熟悉
+
+雖然 Rust 選擇了許多語法我個人認為跟 TypeScript 很像，但許多概念依然跟其他語言有所不同，甚至因為設計理念的關係，會需要學習
 
 Java 常用的萬惡之源 `null` ，到了 Rust 是 unsafe 的存在。這個觀念讓我痛苦了很久，因為寫了兩年 Java 的我已經變成 `null` 的形狀了啊（大霧），當然在體會到 `Option<T>` 的好之後，反而讓我後來在 Java 也改用 `Optional<T>` 了
 
 至於 `try catch` 轉向 `Result<T, E>` ，對於我而言反而好改，因為我在前公司根本就沒養成要做錯誤處理的習慣......，用上 `Result<T, E>` 後，才知道原先的做法有可能會出錯
 
-但除了這幾個問題之外，就沒啥感覺了
+不過學習曲線這件事，個人覺得不必太過擔心，而且學了絕對是利大於弊，因為......
 
-為什麼呢？
-
-## 我笨，但編譯器可不笨啊
+## 我笨，但 Rust 的編譯器可不笨
 
 我們來做個小實驗，先在 JavaScript 寫個 function 做 Hello world ，然後貼到 [Rust Playground](https://play.rust-lang.org/) ，直接按下 Build！
 
@@ -164,9 +129,9 @@ error: expected one of `!` or `::`, found `main`
 error: could not compile `playground` (lib) due to previous error
 ```
 
-我們可以很清楚的看到，Rust 編譯器提供了非常有用的資訊！我們應該要使用 `fn` 而不是 `function` 去宣告一個函數。
+我們可以看到，Rust 編譯器提供了非常有用的資訊！我們應該要使用 `fn` 而不是 `function` 去宣告一個函數。
 
-類似於這種的有效錯誤訊息，在其他語言真的非常少見，比如我們在 JS 中寫 Rust 的 Hello world：
+類似於這種的有效錯誤訊息，在其他語言非常少見，比如我們在 JS 中寫 Rust 的 Hello world：
 
 ```javascript
 fn main() {
@@ -193,7 +158,7 @@ SyntaxError: Unexpected identifier 'main'
 Node.js v20.3.1
 ```
 
-看了跟沒看一樣，我還是不知道要改什麼啊
+看了跟沒看一樣，我還是不知道要改什麼
 
 Rust 的編譯器跟 Clippy 提供了非常多有效的建議跟幫助，只要習慣看錯誤提示，甚至可以單靠錯誤提示進行語言的學習，這是跟其他語言不同的，比如第一次寫 Rust 一定會碰到的 borrow checker：
 
@@ -271,7 +236,7 @@ $ node index.js
 [ 1 ]
 ```
 
-「奇怪了，我的值到底為什麼被改了？？」接著就只能開始逐行檢查，這段時間根據邏輯的複雜性與寫程式的印象，會不斷的加長
+「奇怪了，我的值到底為什麼被改了？？」接著就只能開始逐行檢查，這段過程所需花費的時間與難度，會根據邏輯的複雜性與對於程式原始碼的熟悉度而逐漸增加
 
 如果換成 Rust ，就是另一個故事了
 
@@ -290,7 +255,7 @@ fn main() {
 }
 ```
 
-除了上面提過的 `move` 錯誤提示外，你還會收到這個東西：
+除了上面提過的 borrow checker 錯誤提示外，你還會收到這個東西：
 
 ```
    Compiling playground v0.0.1 (/playground)
@@ -306,7 +271,7 @@ help: consider changing this to be mutable
   |         +++
 ```
 
-編譯器提示，需要我們將變數宣告為可變的變數，才能使用 `pop()` ，可變不可變，清楚明瞭，也不會突然就被改了導致需要重新 Review 自己的程式碼，因為**編譯器提供的保證，除非你主動退出（unsafe），否則一定有效，只要遵守編譯器的規則，就能避免很多的問題**
+編譯器提示，需要我們將變數宣告為可變的變數，才能使用 `pop()` ，可變不可變，清楚明瞭，也不會突然就被改了導致需要重新 Review 自己的程式碼，因為**編譯器提供的保證，除非你主動退出（unsafe），否則一定有效，只要遵守編譯器的規則，就能在編譯前避免很多的問題**
 
 如果想要做到和 JavaScript 相同的行為，我們需要這樣寫才行
 
@@ -333,7 +298,7 @@ fn main() {
 [1]
 ```
 
-`val2` 需要被宣告為 `val1` 的可變引用（mutable reference），並且 `val1` 也必須利用 `mut` 宣告為可變才能這麼做，這使得開發者能清楚的明白自己所操作的是什麼，維護者維護時所需花費的腦力與時間也能大幅降低
+`val2` 需要被宣告為 `val1` 的可變引用（mutable reference），並且 `val1` 也必須利用 `mut` 宣告為可變才能這麼做。開發者能清楚的明白自己所操作的是什麼，維護者維護時所需花費的腦力與時間也能大幅降低
 
 學習 Rust 甚至能學到一些新知識，比如由於 Rust 不像 JavaScript 幾乎所有使用場景都是單線程（沒人愛用 Workers 吧？？？），所以還會有很多特殊的規則是使用 JS 這種主要為單線程的語言所學不到的，比如下面這個例子：
 
@@ -380,7 +345,7 @@ For more information about this error, try `rustc --explain E0133`.
 error: could not compile `playground` (bin "playground") due to previous error
 ```
 
-當時看到這個錯誤後，我才恍然大悟，原來做可變的 global variable 竟有可能造成問題！
+當時看到這個錯誤後，我才恍然大悟，原來做可變的 global variable 竟有可能造成預期外的行為（undefined behavior）！
 
 > 題外話，遇到這種問題，有兩種解法：<br> 第一種：利用「內部可變」物件將值包起來，就可以正常利用了，比如 `Mutex` 互斥鎖、 `RwLock` 讀寫鎖跟 Atomic
 >
@@ -402,8 +367,7 @@ error: could not compile `playground` (bin "playground") due to previous error
 > }
 > ```
 >
-> <br>
-> 第二種：使用 unsafe ，這種做法相當於跟編譯器說「放心吧我知道這邊有問題，交給我自己處理」
+> 第二種：使用 unsafe ，這種做法相當於跟編譯器說「放心吧我知道這邊可能會有問題，交給我自己處理」
 >
 > ```rust
 > use tokio;
@@ -422,3 +386,7 @@ error: could not compile `playground` (bin "playground") due to previous error
 >     data_list.into_iter().for_each(|data| GLOBAL_VAL.push(data));
 > }
 > ```
+
+我常認為**編譯器應該是你的好友，而不是你的敵人**， rustc 跟 rust-analyzer 提供的幫助讓初學這門語言的門檻大幅降低，同時也讓寫出來的程式更為安全
+
+但這並不代表我推薦每個人都去學 Rust 。
