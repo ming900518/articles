@@ -74,6 +74,8 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 寫這篇文章的幾天前，知名 TypeScript Wizard （雖然我不怎麼喜歡 TS ，但還是會去學習下用法的）分享了 [TypeScript 拒絕 Typed Error GitHub Issue 的 TL;DR](https://twitter.com/mattpocockuk/status/1677788449368047617)
 
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Type-safe errors will probably never come to TypeScript because:<br><br>- In JS there&#39;s no culture of libraries declaring what errors they throw<br>- instanceof in catch clauses is fine<br>- Using a Rust-style Result is probably just better<a href="https://t.co/JAOOKNIZLk">https://t.co/JAOOKNIZLk</a></p>&mdash; Matt Pocock (@mattpocockuk) <a href="https://twitter.com/mattpocockuk/status/1677788449368047617?ref_src=twsrc%5Etfw">July 8, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
 其中有一點我覺得很有趣："In JS there's no culture of libraries declaring what errors they throw"
 
 在其他強型別語言， Error 通常都會繼承自代表錯誤或例外的 Interface / Trait ，並在文件中或型別上提供足夠的資訊供 Binary 用戶或 Library 使用者進行錯誤處理。 JavaScript 系列就沒這回事了，雖然也有 [Error](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Error) Object，但一堆 Library 根本就沒有定義他到底會 throw 啥東西出來，不清楚情況的人就只能繼續亂 catch 一通，想要好好做處理的人也只能 trial and error 或直接去翻 Library 的原始碼，這導致要在 JS 下寫穩定程式的難度比起其他程式語言更難。
@@ -81,6 +83,8 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 #### 3. `undefined`
 
 還有需要解釋嗎？[所有的錯都是 Java 害的，真就萬惡之源啊](https://twitter.com/BrendanEich/status/1271998084642246657?s=20)
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">If I didn&#39;t have &quot;Make it look like Java&quot; as an order from management, *and* I had more time (hard to unconfound these two causal factors), then I would have preferred a Self-like &quot;everything&#39;s an object&quot; approach: no Boolean, Number, String wrappers. No undefined and null. Sigh.</p>&mdash; BrendanEich (@BrendanEich) <a href="https://twitter.com/BrendanEich/status/1271998084642246657?ref_src=twsrc%5Etfw">June 14, 2020</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 ### Rust
 
@@ -98,7 +102,7 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 
 #### 2. 語法需要熟悉
 
-雖然 Rust 選擇了許多語法我個人認為跟 TypeScript 很像，但許多概念依然跟其他語言有所不同，甚至因為設計理念的關係，會需要學習
+雖然 Rust 選擇了許多語法我個人認為跟 TypeScript 很像，但許多概念依然跟其他語言有所不同，甚至因為設計理念的關係，會需要重新學習不一樣的做法
 
 Java 常用的萬惡之源 `null` ，到了 Rust 是 unsafe 的存在。這個觀念讓我痛苦了很久，因為寫了兩年 Java 的我已經變成 `null` 的形狀了啊（大霧），當然在體會到 `Option<T>` 的好之後，反而讓我後來在 Java 也改用 `Optional<T>` 了
 
@@ -214,9 +218,9 @@ $ node index.js
 
 > 這邊附上[網頁版連結](https://doc.rust-lang.org/stable/error_codes/E0382.html)，其實在 Playground 裡也可以直接點錯誤代碼看到同一個頁面喔！
 
-非常清楚明瞭的說明，這點在我學習 Rust 的時候，真的給了我非常大的幫助。
+清楚明瞭的說明在我學習 Rust 的時候，給了我非常大的幫助。
 
-另外，這個編譯器還能避免開發者出錯，比如上面的 JS 例子，稍微修改下就會開始崩壞了
+另外，這個編譯器還能避免開發者出錯，比如上面的 JS 例子，稍微修改下就會開始崩壞了：
 
 ```javascript
 const val1 = [1, 2];
@@ -236,9 +240,9 @@ $ node index.js
 [ 1 ]
 ```
 
-「奇怪了，我的值到底為什麼被改了？？」接著就只能開始逐行檢查，這段過程所需花費的時間與難度，會根據邏輯的複雜性與對於程式原始碼的熟悉度而逐漸增加
+「奇怪了，我的值到底為什麼被改了？？」為了讓程式正常工作，身為工程師的我就只能開始逐行檢查。這段過程所需花費的時間與難度，會根據邏輯的複雜性與對於程式原始碼的熟悉度而逐漸增加。
 
-如果換成 Rust ，就是另一個故事了
+如果換成 Rust 呢？
 
 ```rust
 fn main() {
@@ -273,7 +277,7 @@ help: consider changing this to be mutable
 
 編譯器提示，需要我們將變數宣告為可變的變數，才能使用 `pop()` ，可變不可變，清楚明瞭，也不會突然就被改了導致需要重新 Review 自己的程式碼，因為**編譯器提供的保證，除非你主動退出（unsafe），否則一定有效，只要遵守編譯器的規則，就能在編譯前避免很多的問題**
 
-如果想要做到和 JavaScript 相同的行為，我們需要這樣寫才行
+如果想要做到和 JavaScript 相同的行為，我們需要這樣寫才行：
 
 ```rust
 fn main() {
@@ -298,7 +302,7 @@ fn main() {
 [1]
 ```
 
-`val2` 需要被宣告為 `val1` 的可變引用（mutable reference），並且 `val1` 也必須利用 `mut` 宣告為可變才能這麼做。開發者能清楚的明白自己所操作的是什麼，維護者維護時所需花費的腦力與時間也能大幅降低
+`val2` 需要被宣告為 `val1` 的可變引用（mutable reference），並且 `val1` 也必須利用 `mut` 宣告為可變才能這麼做。開發者會理解自己所操作的是什麼樣的物件，而維護者維護時所需花費的腦力與時間，也能隨著這些就在程式碼上的 keyword 而大幅降低
 
 學習 Rust 甚至能學到一些新知識，比如由於 Rust 不像 JavaScript 幾乎所有使用場景都是單線程（沒人愛用 Workers 吧？？？），所以還會有很多特殊的規則是使用 JS 這種主要為單線程的語言所學不到的，比如下面這個例子：
 
@@ -313,7 +317,9 @@ async function receiveFromExternalSource() {
 receiveFromExternalSource().then(() => console.log(globalVal));
 ```
 
-這在 JavaScript 是完全合法的，你可能也不會發現任何問題，那如果換到 Rust 呢？
+這在 JavaScript 是完全合法的，你可能也不會發現任何問題。
+
+但如果我們將程式換到 Rust 呢？
 
 ```rust
 use tokio;
@@ -387,6 +393,19 @@ error: could not compile `playground` (bin "playground") due to previous error
 > }
 > ```
 
-我常認為**編譯器應該是你的好友，而不是你的敵人**， rustc 跟 rust-analyzer 提供的幫助讓初學這門語言的門檻大幅降低，同時也讓寫出來的程式更為安全
+我常認為**編譯器應該是開發者的好友，而不是開發者的敵人**， rustc 跟 rust-analyzer 提供的幫助讓初學這門語言的門檻大幅降低，同時也讓寫出來的程式更為安全
 
-但這並不代表我推薦每個人都去學 Rust 。
+## 接受自己並不如想像的如此聰明，至少，沒有電腦聰明
+
+我很常看到或聽到以下言論：
+
+1. 如果程式寫的好，用什麼語言寫都能很快很安全
+2. 只要我自己記得，這邊的邏輯可以用 _某種寫法_ 寫，反正之後再做檢查就好
+
+我曾一度接受這種說法，甚至自己發表過這種言論，但現在我卻認為這些說法都是極其不負責任的。因為**人類會犯錯，人不能確保自己永遠都是正確的**。
+
+程式則不一樣，只要在正常的硬體中執行正確的邏輯，它們運行的效率與精準度絕對比人類還高。我認識到了這點，也最終接受了這個事實。因為在離開前公司前，我一直都在為了不承認這點，而不斷付出名為「除錯」的代價，這邊「除錯」的對象往往不是需要人工處理的業務邏輯錯誤，而是空指針引用、使用未初始化的物件與錯誤的改變不應改變的值等低級錯誤，**這些錯誤完全都可以透過良好的語言設計，與智能的編譯器，在編譯前就抓出問題！**
+
+從 rustc 、 cargo clippy 到 Miri ， Rust 生態的各種輔助工具不僅僅只是將程式編譯出來執行，它們協助我不犯下愚蠢的錯誤，幫助我產出更優秀穩定的程式，並可以把寶貴的時間，完全用在業務邏輯的除錯與優化。
+
+這就是我為何選擇使用 Rust ，而我也會繼續使用它：只需付出比其他程式語言稍長的開發時間，便能揚長避短，何樂而不為呢？
