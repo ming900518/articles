@@ -395,14 +395,16 @@ error: could not compile `playground` (bin "playground") due to previous error
 
 以上這些只是 Rust 編譯器功能的一小部分，礙於篇幅，這邊基本不可能完整展示全部的功能。所以這邊提供 [Rust error codes index](https://doc.rust-lang.org/error_codes/error-index.html) 和 [Clippy Lints](https://rust-lang.github.io/rust-clippy/master/index.html) 的連結，感興趣的話可以點進去查看上千個 rustc 和 cargo clippy 規則
 
-我將 Rust 編譯器視為我的好友，在我開發 Rust 程式時監督我寫出安全的程式，並在我犯錯時提醒並教我如何處理，使我受益良多，這是我在其他語言都未曾見過的。
+我將 Rust 編譯器視為我的好友，在我練習時提供提示幫助我學習，在我開發 Rust 程式時監督我寫出安全的程式，並在我犯錯時提醒我處理，使我受益良多，這是我在其他語言都未曾見過的。
+
+就這點，我甚至認為 Rust 的學習曲線並沒有高出其他語言多少。
 
 ## 接受自己並不如想像的如此聰明，至少，沒有電腦聰明
 
 我很常看到或聽到以下言論：
 
 1. 如果程式寫的好，用什麼語言寫都能很快很安全
-2. 只要我自己記得，這邊的邏輯可以用 _某種寫法_ 寫，反正之後再做檢查就好
+2. 只要我自己記得，這邊的邏輯可以用 _某種 Workaround_ 寫，反正之後再做檢查就好
 
 我曾一度接受這種說法，甚至自己發表過這種言論，但現在我卻認為這些說法都是極其不負責任的。因為**人類會犯錯，人無法確保自己永遠都是正確的**。
 
