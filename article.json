@@ -83,5 +83,10 @@
         "name": "rusty-sqlite3: Why and How",
         "date": "2023-05-08T13:13:00Z",
         "url": "rusty-sqlite3.md"
+    },
+    {
+        "name": "我選擇寫 Rust ，因為我知道我自己並不聰明",
+        "date": "2023-07-15T17:50:00Z",
+        "url": "using-rust-because-im-stupid.md"
     }
 ]
