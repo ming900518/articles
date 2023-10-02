@@ -3,108 +3,126 @@
         "name": "在Tomcat中關閉不安全的TLS 1.0與1.1",
         "date": "2021-03-10T04:40:51Z",
         "url": "Tomcat-Disable-Unsecure-TLS.md",
-        "intro": null
+        "intro": null,
+        "commit": "afccaca"
     },
     {
         "name": "Tomcat的Slow HTTP Denial of Service Attack弱點處理方式",
         "date": "2021-03-10T06:22:38Z",
         "url": "Tomcat-Resolve-Slow-HTTP-DoS-Attack.md",
-        "intro": null
+        "intro": null,
+        "commit": "76372fe"
     },
     {
         "name": "安全的SSH連線",
         "date": "2021-08-13T01:59:17Z",
         "url": "SSH-Secure-Settings.md",
-        "intro": null
+        "intro": null,
+        "commit": "0058290"
     },
     {
         "name": "在Spring Boot中連接多資料庫",
         "date": "2021-09-01T01:45:08Z",
         "url": "Spring-Boot-Multi-Datasource.md",
-        "intro": null
+        "intro": null,
+        "commit": "518c30e"
     },
     {
         "name": "Springdoc OpenAPI UI（Swagger）爬坑記錄（持續更新）",
         "date": "2021-08-31T03:31:59Z",
         "url": "Springdoc.md",
-        "intro": null
+        "intro": null,
+        "commit": "f678149"
     },
     {
         "name": "Spring Boot Admin & Spring Security爬坑記錄",
         "date": "2021-09-01T03:12:07Z",
         "url": "SBA-with-SpringSecurity.md",
-        "intro": null
+        "intro": null,
+        "commit": "f22ffa6"
     },
     {
         "name": "把舊版Ubuntu的MariaDB更新到最新版",
         "date": "2021-12-25T02:40:14Z",
         "url": "Update-MariaDB-from-Official-Repo.md",
-        "intro": null
+        "intro": null,
+        "commit": "0eaed50"
     },
     {
         "name": "在MariaDB中存放&讀取Array",
         "date": "2022-07-01T07:46:27Z",
         "url": "MariaDB-Store-Array.md",
-        "intro": null
+        "intro": null,
+        "commit": "a78c5b7"
     },
     {
         "name": "透過Spring從其他API取得二進位檔案後回傳",
         "date": "2022-12-06T06:09:46Z",
         "url": "Spring-Boot-Fetching-Data-Response.md",
-        "intro": null
+        "intro": null,
+        "commit": "6968e26"
     },
     {
         "name": "大三統計套裝軟體（Excel）上課操作記錄",
         "date": "2021-10-23T09:41:37Z",
         "url": "Excel-Operation-Log.md",
-        "intro": null
+        "intro": null,
+        "commit": "fc806b3"
     },
     {
         "name": "從PostgreSQL中查詢資料表資訊",
         "date": "2022-08-02T09:14:33Z",
         "url": "Postgres-Query-Table-Info.md",
-        "intro": null
+        "intro": null,
+        "commit": "b456781"
     },
     {
         "name": "在Rust正確的進行中文排序",
         "date": "2023-01-07T01:45:00Z",
         "url": "Rust-Chinese-Sorting.md",
-        "intro": null
+        "intro": null,
+        "commit": "08fe51f"
     },
     {
         "name": "LINE Notify 取得用戶 Token API 串接",
         "date": "2023-01-17T09:46:47Z",
         "url": "LINE-Notify.md",
-        "intro": null
+        "intro": null,
+        "commit": "8128416"
     },
     {
         "name": "使用 Yew 框架與 Server Side Rendering，為個人網頁改版",
         "date": "2023-01-29T11:40:00Z",
         "url": "Personal-Page-Update.md",
-        "intro": "這篇文章，將會盡可能的記錄我改版個人網頁的過程。"
+        "intro": "這篇文章，將會盡可能的記錄我改版個人網頁的過程。",
+        "commit": "4356396"
     },
     {
         "name": "83% 性能提升！CSV 至 JSON 轉換工具（fast-csv-to-json）優化記錄",
         "date": "2023-04-04T22:44:00Z",
         "url": "Journey-of-Csv-to-Json-Optimization.md",
-        "intro": "由於這幾天是台灣的清明節連假，所以想說利用這個機會來 逃離工作時被逼著用的 JS 跟 TS 做點工作之外的事。正好我有個案子不想架後端與資料庫，想要利用 JSON 來儲存大量的資料，就計劃寫個 CSV 轉 JSON 的小工具來用......"
+        "intro": "由於這幾天是台灣的清明節連假，所以想說利用這個機會來 逃離工作時被逼著用的 JS 跟 TS 做點工作之外的事。正好我有個案子不想架後端與資料庫，想要利用 JSON 來儲存大量的資料，就計劃寫個 CSV 轉 JSON 的小工具來用......",
+        "commit": "4ad9d77"
     },
     {
         "name": "JavaScript Worker (NodeJS Worker Threads) 使用記錄",
         "date": "2023-04-11T16:52:00Z",
         "url": "Js-Worker.md",
-        "intro": null
+        "intro": null,
+        "commit": "ec11daf"
     },
     {
         "name": "rusty-sqlite3: Why and How",
         "date": "2023-05-08T13:13:00Z",
         "url": "rusty-sqlite3.md",
-        "intro": "rusty-sqlite3 是我這幾天寫的一個 Node-API Library ，把 Rust 中非常有名且用於非常多專案的 SQL Library - SQLx 搬到 Node.js 後端專案用，目前滿足了我原先想要做到的所有功能，本文將說明我為什麼要做這個 Library ，以及我如何是如何實作這個 Library 的。"
+        "intro": "rusty-sqlite3 是我這幾天寫的一個 Node-API Library ，把 Rust 中非常有名且用於非常多專案的 SQL Library - SQLx 搬到 Node.js 後端專案用，目前滿足了我原先想要做到的所有功能，本文將說明我為什麼要做這個 Library ，以及我如何是如何實作這個 Library 的。",
+        "commit": "0387d7b"
     },
     {
         "name": "我選擇寫 Rust ，因為我知道我自己並不聰明",
         "date": "2023-07-15T17:50:00Z",
         "url": "using-rust-because-im-stupid.md",
-        "intro": "一年前，我 commit 了我的第一行 Rust code ，截至 2023/5/20 ， Rust Code 佔了我自己寫的程式的 73.28 %（現在應該佔比更高），現在的我已經可以很自豪的說我可以用 Rust 寫幾乎所有程式。這篇文章我會分享自己寫程式的經驗，以及為什麼我選擇了 Rust ，可以給別人在選擇該不該學習某種語言時，一點不同於他人的觀點。"
+        "intro": "一年前，我 commit 了我的第一行 Rust code ，截至 2023/5/20 ， Rust Code 佔了我自己寫的程式的 73.28 %（現在應該佔比更高），現在的我已經可以很自豪的說我可以用 Rust 寫幾乎所有程式。這篇文章我會分享自己寫程式的經驗，以及為什麼我選擇了 Rust ，可以給別人在選擇該不該學習某種語言時，一點不同於他人的觀點。",
+        "commit": "0fd9ebd"
     }
 ]
