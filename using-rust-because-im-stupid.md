@@ -57,7 +57,7 @@ Java 8 推出已經是 2014 的事情了，當時我還在讀國中，猜猜看 
 我的第一份工作與現在的工作都有用到 JavaScript 跟 TypeScript ，這兩個語言（或者說一個語言跟一個語言補強工具？ Linter ？）在前端幾乎就是獨佔市場，不用也不行
 
 
-> 我知道啦，現在可以寫 WebAssembly ，你現在看到的 Blog 就是我用 WebAssembly 寫出來的。但現在 WebAssembly 還是會需要 JS Glue Code 啊，沒辦法 100% 擺脫 JS 的魔掌
+> 我知道啦，現在可以寫 WebAssembly ~~，你現在看到的 Blog 就是我用 WebAssembly 寫出來的~~（更新：[現在不是了， HTMX 超香](https://x.com/mingchang137/status/1728798407378993558?s=46)）。但現在 WebAssembly 還是會需要 JS Glue Code 啊，沒辦法 100% 擺脫 JS 的魔掌
 
 弱型別 + 動態型別的語言在需要快速迭代的場景非常適合，不需要花時間去處理型別問題（哈哈這是個謊言）可以把更多的時間用於思考實際的程式邏輯，但我坦白說，我對這兩種語言的好感甚至低於 Java
 
