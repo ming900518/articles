@@ -622,7 +622,7 @@ Welcome Suica 沒有 Suica Penguin 🐧（對，這就是牠的名字，牠很�
 </div>
 <br>
 
-~~貧富差距~~ 東日本，我剛稱讚你的都圈內通勤鐵路用上 LCD ，內容又多又好理解，結果為啥東北/上越/北陸新幹線用的是傳統的 LED 啊？你看看你隔壁的東海道/山陽新幹線，空間差不多卻連停車站都能顯示出來，加油好嗎
+~~貧富差距~~ 東日本，我剛稱讚你的都圈內通勤鐵路用上 LCD ，內容又多又好理解，結果為啥東北 / 上越 / 北陸新幹線用的是傳統的 LED 啊？你看看你隔壁的東海道 / 山陽新幹線，空間差不多卻連沿途停靠站都能顯示出來，加油好嗎
 
 山形新幹線要換 E8 ，不知道此生有沒有機會搭 E2 跟 E3 ， E4 已經沒了（悲）
 
@@ -743,7 +743,7 @@ Welcome Suica 沒有 Suica Penguin 🐧（對，這就是牠的名字，牠很�
 </div>
 <br>
 
-今天要搭乘的新幹線總算進站了 - JR 東日本的 E7 系，之前吵得沸沸揚揚的台高新車案其中有一個可能性就是這型車，雖然想想就知道不太可能，號誌系統大改不知道就要花多少錢，更別提較低的極速跟緩慢的加減速可能不利於台灣短站距的利用
+今天要搭乘的新幹線總算進站了 - JR 東日本的 E7 系，之前吵得沸沸揚揚的台高新車案其中有一個可能性就是這型車，雖然想想就知道不太可能，號誌系統大改不知道就要花多少錢，更別提較低的極速跟緩慢的加減速，可能不利於台灣短站距的利用
 
 <div style="display: flex; flex-flow: row">
     <div style="margin: auto; width: 80vw; padding: 10px; display: flex; flex-flow: column; align-items: center">
@@ -770,7 +770,7 @@ Welcome Suica 沒有 Suica Penguin 🐧（對，這就是牠的名字，牠很�
 
 第一次的原版新幹線體驗正式開始！車內空間體感上跟台灣高鐵 700T 差不多，但整體風格比起台灣的老車現代化許多
 
-看看這超級大的洗手檯，這都能化妝了
+看看這超級大的洗手檯，不說我還以為是某百貨公司的廁所
 
 <div style="display: flex; flex-flow: row">
     <div style="margin: auto; width: 80vw; padding: 10px; display: flex; flex-flow: column; align-items: center">
@@ -818,7 +818,7 @@ Welcome Suica 沒有 Suica Penguin 🐧（對，這就是牠的名字，牠很�
 </div>
 <br>
 
-由於只是 24 分鐘的旅程，而且全程都在限速 130km/h 的區間，所以沒能感受高速行駛（本車型極速 275 km/h）下的乘坐體驗，我自己感覺起來跟台高的穩定度差不多
+由於路程只有 24 分鐘，而且全程都在限速 130km/h 的區間，所以沒能感受高速行駛（本車型極速 275 km/h）下的乘坐體驗，我自己感覺起來跟台高的穩定度差不多
 
 抵達大宮站
 
@@ -856,7 +856,7 @@ Welcome Suica 沒有 Suica Penguin 🐧（對，這就是牠的名字，牠很�
 
 出站時有一個小插曲：由於自己並不了解新幹線的車票是否會被自動改札收回，所以我便走到人工改札口去問了站員，結果站員 A 根本聽不懂我在說什麼，直到站員 B 過來支援，才得到了「Ah, ah, you want us to stamp it, right?」的正常回覆，最後比手畫腳溝通後才成功出站，抵達飯店。
 
-> 後來問了某站站員，得到的回應是改札出站時，其實只需要插入 JR Rail Pass 即可出站，不一定需要插入乘車券
+> 後來問了某站站員，得到的回應是改札出站時，其實只需要插入 JR Rail Pass 即可出站，不需要插入乘車券
 
 <div style="display: flex; flex-flow: row">
     <div style="margin: auto; width: 80vw; padding: 10px; display: flex; flex-flow: column; align-items: center">
