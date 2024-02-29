@@ -733,7 +733,7 @@ Welcome Suica 沒有 Suica Penguin 🐧（對，這就是牠的名字，牠很�
             February 14, 2024
         </a>
     </blockquote>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" defer></script>
+    <script src="https://platform.twitter.com/widgets.js" charset="utf-8" defer></script>
 </div>
 
 出發前忘記先查查車型，結果前一班北陸新幹線用的車居然是 W7 系（かがやき）！沒聽到著名旋律「北陸浪漫」，氣死我了
