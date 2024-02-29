@@ -719,8 +719,22 @@ Welcome Suica 沒有 Suica Penguin 🐧（對，這就是牠的名字，牠很�
 目前可能出現在東京站的新幹線現役列車 E2, E3, E5, E6, E7, W7, N700A, N700S 都拍到了，只差 H5 沒有看到，有些可惜（剩三列，要遇到本來就比較難啦）
 
 <div style="display: flex; flex-flow: row; justify-content: center;">
-<blockquote class="twitter-tweet" data-dnt="true"><p lang="zh" dir="ltr">東京站<br>E2+E3, E5+E6, E7 進站 <a href="https://t.co/JBtvZuDGoe">pic.twitter.com/JBtvZuDGoe</a></p>&mdash; Ming Chang (@mingchang137) <a href="https://twitter.com/mingchang137/status/1757763278812660058?ref_src=twsrc%5Etfw">February 14, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-    </div>
+    <blockquote class="twitter-tweet" data-dnt="true">
+        <p lang="zh" dir="ltr">
+            東京站
+            <br>
+            E2+E3, E5+E6, E7 進站
+            <a href="https://t.co/JBtvZuDGoe">
+                pic.twitter.com/JBtvZuDGoe
+            </a>
+        </p>
+        &mdash; Ming Chang (@mingchang137)
+        <a href="https://twitter.com/mingchang137/status/1757763278812660058?ref_src=twsrc%5Etfw">
+            February 14, 2024
+        </a>
+    </blockquote>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" defer></script>
+</div>
 
 出發前忘記先查查車型，結果前一班北陸新幹線用的車居然是 W7 系（かがやき）！沒聽到著名旋律「北陸浪漫」，氣死我了
 
