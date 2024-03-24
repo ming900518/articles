@@ -46,7 +46,7 @@
         <div class="card-body z-30" style="color: black">
             <div class="flex lg:flex-row flex-col gap-2">
                 <h1 class="card-title grow transition-colors" style="font-size: 1.25rem; font-weight: 600; margin: 0">Day 2 - Day 5</h1>
-                <h2 class="justify-end" style="font-size: .875rem; font-weight: normal; margin: 0">2024/2/15 - 2024/2/28</h2>
+                <h2 class="justify-end" style="font-size: .875rem; font-weight: normal; margin: 0">2024/2/15 - 2024/2/18</h2>
             </div>
             <p style="font-size: revert; margin: 0"> 更新中，敬請期待 </p>
         </div>
