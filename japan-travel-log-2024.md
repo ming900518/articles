@@ -40,4 +40,33 @@
     </a>
 </div>
 
-<p style="text-align: center; font-style: italic;">連載更新中，敬請期待！</p>
+<div
+    class="card shadow-xl mb-5 lg:ml-20 lg:mr-20 rounded-lg select-none cursor-pointer" style="background-color: gray">
+    <a>
+        <div class="card-body z-30" style="color: black">
+            <div class="flex lg:flex-row flex-col gap-2">
+                <h1 class="card-title grow transition-colors" style="font-size: 1.25rem; font-weight: 600; margin: 0">Day 2 - Day 5</h1>
+                <h2 class="justify-end" style="font-size: .875rem; font-weight: normal; margin: 0">2024/2/15 - 2024/2/28</h2>
+            </div>
+            <p style="font-size: revert; margin: 0"> 更新中，敬請期待 </p>
+        </div>
+    </a>
+</div>
+
+<div
+    class="card bg-base-200 shadow-xl mb-5 lg:ml-20 lg:mr-20 rounded-lg select-none cursor-pointer hover:bg-base-300 transition-colors">
+    <a
+        href="/blog?filename=japan-travel-log-2024-d6.md"
+        hx-get="/article?filename=japan-travel-log-2024-d6.md"
+        hx-swap="transition:true show:window:top"
+        hx-target="#content"
+        hx-push-url="/blog?filename=japan-travel-log-2024-d6.md">
+        <div class="card-body z-30" style="color: black">
+            <div class="flex lg:flex-row flex-col gap-2">
+                <h1 class="card-title grow transition-colors" style="font-size: 1.25rem; font-weight: 600; margin: 0">Day 6</h1>
+                <h2 class="justify-end" style="font-size: .875rem; font-weight: normal; margin: 0">2024/2/19 - 2024/2/20</h2>
+            </div>
+            <p style="font-size: revert; margin: 0"> 東海系新幹線（東海道、山陽、九州新幹線）全通 </p>
+        </div>
+    </a>
+</div>
