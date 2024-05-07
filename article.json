@@ -131,5 +131,12 @@
         "url": "japan-travel-log-2024.md",
         "intro": "（連載中）這次旅程是我自 2013 年，和家人跟團去京阪神後的第二次日本之旅，本系列文章將分享 2024/2/14 - 2024/2/20 的瘋狂行程。",
         "commit": "1bd808a"
+    },
+    {
+        "name": "在 Rust 專案中使用 macOS 的 Objective-C Private Framework",
+        "date": "2024-05-07T17:44:00Z",
+        "url": "rust-with-objc-private-framework.md",
+        "intro": "想要在 Rust 專案取用 Private Framework，需要先對專案進行額外設定，本文以 `SidecarCore.framework` （macOS Sidecar 功能）為例......",
+        "commit": "38d4556"
     }
 ]
