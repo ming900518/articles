@@ -144,6 +144,6 @@
         "date": "2025-03-02T16:21:00Z",
         "url": "hw-accel-gstreamer-in-rust-with-gtk.md",
         "intro": "這篇文章會從全新的 Rust 專案開始，一步步教學如何用 GTK 與 GStreamer 實作可以正常調用常見硬體加速的全螢幕影片播放器。",
-        "commit": "7e4b9e8"
+        "commit": "a6973b3"
     }
 ]
