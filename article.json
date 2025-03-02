@@ -138,5 +138,12 @@
         "url": "rust-with-objc-private-framework.md",
         "intro": "想要在 Rust 專案取用 Private Framework，需要先對專案進行額外設定，本文以 `SidecarCore.framework` （macOS Sidecar 功能）為例......",
         "commit": "38d4556"
+    },
+    {
+        "name": "用 Rust 搭配 GTK 與 GStreamer 實作簡易硬體加速全螢幕影片播放器",
+        "date": "2025-03-02T16:21:00Z",
+        "url": "hw-accel-gstreamer-in-rust-with-gtk.md",
+        "intro": "這篇文章會從全新的 Rust 專案開始，一步步教學如何用 GTK 與 GStreamer 實作可以正常調用常見硬體加速的全螢幕影片播放器。",
+        "commit": "7e4b9e8"
     }
 ]
