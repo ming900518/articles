@@ -77,7 +77,6 @@ fn main() -> glib::ExitCode {
         .build(); // 產生程式！
 
     app.connect_activate(|app| { // 當 GTK 成功啓用剛剛產生的程式後，執行這個 closure
-        init_gstreamer().expect("Unable to init GStreamer."); // 初始化 GStreamer
         let window = init_window(app); // 建立 GTK 視窗
     });
 
